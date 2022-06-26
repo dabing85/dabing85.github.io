@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title> • Posts by &#34;hexo&#34; category</title>
-        <link>http://example.com</link>
+        <link>https://blog.dabing.cool</link>
         <description>欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸</description>
         <language>zh-CN</language>
         <pubDate>Mon, 20 Jun 2022 20:46:25 +0800</pubDate>
@@ -10,15 +10,15 @@
         <category>Hexo</category>
         <category>微服务</category>
         <item>
-            <guid isPermalink="true">http://example.com/Hexo/hexo</guid>
+            <guid isPermalink="true">https://blog.dabing.cool/Hexo/hexo</guid>
             <title>Hexo</title>
-            <link>http://example.com/Hexo/hexo</link>
+            <link>https://blog.dabing.cool/Hexo/hexo</link>
             <category>Hexo</category>
             <pubDate>Mon, 20 Jun 2022 20:46:25 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;作者：dabing（王甜甜）&lt;br&gt;
 官方文档：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv&#34;&gt;https://hexo.io/zh-cn/docs/&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;shoka 主题：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWUv&#34;&gt;https://shoka.lostyu.me/&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;我的博客：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmRhYmluZy5jb29sLw==&#34;&gt;https://blog.dabing.cool/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;我的博客：&lt;a href=&#34;https://blog.dabing.cool/&#34;&gt;https://blog.dabing.cool/&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;一-安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-安装&#34;&gt;#&lt;/a&gt; 一、安装&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
@@ -159,7 +159,7 @@
 &lt;p&gt;** 第三步，域名解析：** 记录类型 CNAME，记录值写：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1naXRodWItb245aW0zM2F1MjRmLmdpdGh1Yi5pbw==&#34;&gt;你的 github 名.github.io&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/1656126371608-7c89ca76-dddd-46a4-a6d5-8a1843af2388.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;p&gt;** 第四步：** 到 github 找到 &lt;code&gt;你的github名.github.io&lt;/code&gt;  仓库，setting，找到 github pages，添加上你的域名即可。&lt;/p&gt;
-&lt;p&gt;等个十几分钟就去访问下你的博客看看咯。我的 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmRhYmluZy5jb29s&#34;&gt;blog.dabing.cool&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;等个十几分钟就去访问下你的博客看看咯。我的 &lt;a href=&#34;https://blog.dabing.cool&#34;&gt;blog.dabing.cool&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/1656126177215-71010ed0-7373-4947-806a-fcefe95094ea.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;七-使用github-action自动部署hexo到github-pages&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#七-使用github-action自动部署hexo到github-pages&#34;&gt;#&lt;/a&gt; 七、使用 Github Action 自动部署 hexo 到 GitHub pages&lt;/h1&gt;
 &lt;p&gt;这里默认你把上面的都做好了～&lt;/p&gt;

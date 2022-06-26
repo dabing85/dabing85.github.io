@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://blog.dabing.cool</id>
     <title> • Posts by &#34;微服务&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://blog.dabing.cool" />
     <updated>2022-04-30T12:46:25.000Z</updated>
     <category term="Hexo" />
     <category term="微服务" />
     <entry>
-        <id>http://example.com/javamore/springcloud</id>
+        <id>https://blog.dabing.cool/javamore/springcloud</id>
         <title>SpringCloud2020</title>
-        <link rel="alternate" href="http://example.com/javamore/springcloud"/>
+        <link rel="alternate" href="https://blog.dabing.cool/javamore/springcloud"/>
         <content type="html">&lt;p&gt;作者：dabing（王甜甜）&lt;/p&gt;
 &lt;p&gt;视频：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMThFNDExeDdlVD9wPTE=&#34;&gt;尚硅谷 2020 周阳 SpringCloud（H 版 &amp;amp; alibaba）&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;（1/150）&lt;/p&gt;
