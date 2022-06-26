@@ -102,12 +102,12 @@ Dabing =  = 不在能知，乃在能行</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -312,15 +312,15 @@ Dabing =  = 不在能知，乃在能行</title>
 <ol>
 <li><strong>问题： Hexo 使用 Github Actions 自动发布至 Github Pages 时，生成的 html 页面空白，没有 css/js 等文件。</strong></li>
 </ol>
-<p>** 原因：** 由于主题是 git clone 下来的，主题目录下生成了 .git 目录，导致和 hexo 根目录下 .git 冲突了，commit 时没有把主题 push 上去导致的。</p>
+<p><strong>原因:</strong> 由于主题是 git clone 下来的，主题目录下生成了 .git 目录，导致和 hexo 根目录下 .git 冲突了，commit 时没有把主题 push 上去导致的。</p>
 <p><strong>解决办法：</strong> 删掉主题下的.git 文件夹，重新提交，目的是把 next 主题文件夹提交上去（删掉.git 文件夹后 git commit 依然没有提交上，需要把 next 文件夹剪切出来后 git add&amp;&amp;git commit &amp;&amp;git push 后，再把 next 文件夹拷贝回来，再 git add&amp;&amp;git commit &amp;&amp;git push 就可以提交成功了）</p>
 <p>注：这里如果用 idea 的可视化按键不行（反正我的不行）。就在 idea 终端打命令。按着上面的来就行。我这里做一下记录。</p>
 <figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> status  <span class="token comment"># 查看有没有未添加的文件夹，</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">git</span> <span class="token function">add</span> themes/shoka/   <span class="token comment"># shoka 是我的主题</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">git</span> commit -m <span class="token string">"shoka主题内容"</span>  </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:dabing85/hexoBlog.git  <span class="token comment"># 我是重新搭建的，这里才关联远程仓库，hexoRepo 是远程仓库名字</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">git</span> branch -M main</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">git</span> push -u origin main</pre></td></tr></table></figure><ol start="2">
 <li><strong>问题：</strong> 安装插件依赖失败，说啥解析失败，<strong>npm ERR! code ERESOLVE</strong></li>
 </ol>
 <p><img data-src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/1656218291887-127df319-fc78-4827-b3d9-922043b5623e.png" alt="img"></p>
-<p>** 解决：** 后面添加 --egacy-peer-deps</p>
-<p>** 参考链接：**<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTY5MzMwL2FydGljbGUvZGV0YWlscy8xMTkxODY0MTY=">https://blog.csdn.net/m0_51969330/article/details/119186416</span></p>
+<p><strong>解决:</strong> 后面添加 --egacy-peer-deps</p>
+<p><strong>参考链接:</strong> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTY5MzMwL2FydGljbGUvZGV0YWlscy8xMTkxODY0MTY=">https://blog.csdn.net/m0_51969330/article/details/119186416</span></p>
 <ol start="3">
 <li><strong>问题：</strong><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49475492/npm-install-error-code-ebadplatform"><strong>npm install error (code EBADPLATFORM)</strong></a> <strong>表示没有平台支持安装 fsevents</strong></li>
 </ol>
@@ -330,12 +330,12 @@ Dabing =  = 不在能知，乃在能行</title>
 <ol start="4">
 <li><strong>问题：自动部署后，github pages 上的自定义域名也会被抹掉.</strong></li>
 </ol>
-<p>解决：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zha2VfaHlkcmEvYXJ0aWNsZS9kZXRhaWxzLzgyNDE0OTY1">https://blog.csdn.net/fake_hydra/article/details/82414965</span></p>
+<p><strong>解决:</strong> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zha2VfaHlkcmEvYXJ0aWNsZS9kZXRhaWxzLzgyNDE0OTY1">https://blog.csdn.net/fake_hydra/article/details/82414965</span></p>
 <p>即：在 source 目录下建一个 CNAME 文件，没有后缀，里面写你的域名即可。</p>
 <h1 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h1>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC80MjQ1M2FmMDg1M2Q=">GitHub Actions 部署 Hexo 小结</span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dic3UyMDA0L2FydGljbGUvZGV0YWlscy8xMjI2NjExMTY=">用 GitHub Actions 自动部署 Hexo</span></p>
-<p>[利用 GitHub Actions 自动部署 Hexo 博客 全自动运行](</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3JlYWQvY3YxMDAxNjA2Mi8=">利用 GitHub Actions 自动部署 Hexo 博客 全自动运行</span></p>
 
       <div class="tags">
           <a href="/tags/Hexo/" rel="tag"><i class="ic i-tag"></i> Hexo</a>
@@ -350,7 +350,7 @@ Dabing =  = 不在能知，乃在能行</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-06-26 14:59:37" itemprop="dateModified" datetime="2022-06-26T14:59:37+08:00">2022-06-26</time>
+    <time title="修改时间：2022-06-26 15:07:25" itemprop="dateModified" datetime="2022-06-26T15:07:25+08:00">2022-06-26</time>
   </span>
   <span id="Hexo/hexo" class="item leancloud_visitors" data-flag-title="Hexo" title="阅读次数">
       <span class="icon">
@@ -390,7 +390,7 @@ Dabing =  = 不在能知，乃在能行</title>
     <div class="item left">
       
 
-  <a href="/javamore/springcloud" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicliwyw55j20zk0m8hdt.jpg" title="SpringCloud2020">
+  <a href="/javamore/springcloud" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitcxhpij20zk0m8hdt.jpg" title="SpringCloud2020">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 微服务</span>
   <h3>SpringCloud2020</h3>
@@ -400,7 +400,7 @@ Dabing =  = 不在能知，乃在能行</title>
     <div class="item right">
       
 
-  <a href="/hello-world" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclffsa1cj20zk0m811l.jpg" title="Hello World">
+  <a href="/hello-world" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexw3o58j20zk0m8e81.jpg" title="Hello World">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Hello World</h3>
@@ -531,6 +531,15 @@ Dabing =  = 不在能知，乃在能行</title>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/javamore/" title="分类于 微服务">微服务</a>
 </div>
 
@@ -545,15 +554,6 @@ Dabing =  = 不在能知，乃在能行</title>
 </div>
 
     <span><a href="/Hexo/hexo" title="Hexo">Hexo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/hello-world" title="Hello World">Hello World</a></span>
   </li>
 
   </ul>

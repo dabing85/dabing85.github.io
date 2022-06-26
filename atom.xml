@@ -3,7 +3,7 @@
     <id>https://blog.dabing.cool</id>
     <title></title>
     <link href="https://blog.dabing.cool" />
-    <updated>2022-06-26T06:59:37.038Z</updated>
+    <updated>2022-06-26T07:07:25.764Z</updated>
     <category term="Hexo" />
     <category term="微服务" />
     <entry>
@@ -21,7 +21,7 @@
 &lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
 </content>
-        <updated>2022-06-26T06:59:37.038Z</updated>
+        <updated>2022-06-26T07:07:25.764Z</updated>
     </entry>
     <entry>
         <id>https://blog.dabing.cool/Hexo/hexo</id>
@@ -186,15 +186,15 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;问题： Hexo 使用 Github Actions 自动发布至 Github Pages 时，生成的 html 页面空白，没有 css/js 等文件。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;** 原因：** 由于主题是 git clone 下来的，主题目录下生成了 .git 目录，导致和 hexo 根目录下 .git 冲突了，commit 时没有把主题 push 上去导致的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原因:&lt;/strong&gt; 由于主题是 git clone 下来的，主题目录下生成了 .git 目录，导致和 hexo 根目录下 .git 冲突了，commit 时没有把主题 push 上去导致的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决办法：&lt;/strong&gt; 删掉主题下的.git 文件夹，重新提交，目的是把 next 主题文件夹提交上去（删掉.git 文件夹后 git commit 依然没有提交上，需要把 next 文件夹剪切出来后 git add&amp;amp;&amp;amp;git commit &amp;amp;&amp;amp;git push 后，再把 next 文件夹拷贝回来，再 git add&amp;amp;&amp;amp;git commit &amp;amp;&amp;amp;git push 就可以提交成功了）&lt;/p&gt;
 &lt;p&gt;注：这里如果用 idea 的可视化按键不行（反正我的不行）。就在 idea 终端打命令。按着上面的来就行。我这里做一下记录。&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; status  &lt;span class=&#34;token comment&#34;&gt;# 查看有没有未添加的文件夹，&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; themes/shoka/   &lt;span class=&#34;token comment&#34;&gt;# shoka 是我的主题&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; commit -m &lt;span class=&#34;token string&#34;&gt;&#34;shoka主题内容&#34;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; remote &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; origin git@github.com:dabing85/hexoBlog.git  &lt;span class=&#34;token comment&#34;&gt;# 我是重新搭建的，这里才关联远程仓库，hexoRepo 是远程仓库名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; branch -M main&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; push -u origin main&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;strong&gt;问题：&lt;/strong&gt; 安装插件依赖失败，说啥解析失败，&lt;strong&gt;npm ERR! code ERESOLVE&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/1656218291887-127df319-fc78-4827-b3d9-922043b5623e.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
-&lt;p&gt;** 解决：** 后面添加 --egacy-peer-deps&lt;/p&gt;
-&lt;p&gt;** 参考链接：**&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTY5MzMwL2FydGljbGUvZGV0YWlscy8xMTkxODY0MTY=&#34;&gt;https://blog.csdn.net/m0_51969330/article/details/119186416&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决:&lt;/strong&gt; 后面添加 --egacy-peer-deps&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考链接:&lt;/strong&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxOTY5MzMwL2FydGljbGUvZGV0YWlscy8xMTkxODY0MTY=&#34;&gt;https://blog.csdn.net/m0_51969330/article/details/119186416&lt;/span&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;strong&gt;问题：&lt;/strong&gt;&lt;a href=&#34;https://stackoverflow.com/questions/49475492/npm-install-error-code-ebadplatform&#34;&gt;&lt;strong&gt;npm install error (code EBADPLATFORM)&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;表示没有平台支持安装 fsevents&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -204,12 +204,12 @@
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;&lt;strong&gt;问题：自动部署后，github pages 上的自定义域名也会被抹掉.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;解决：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zha2VfaHlkcmEvYXJ0aWNsZS9kZXRhaWxzLzgyNDE0OTY1&#34;&gt;https://blog.csdn.net/fake_hydra/article/details/82414965&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决:&lt;/strong&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Zha2VfaHlkcmEvYXJ0aWNsZS9kZXRhaWxzLzgyNDE0OTY1&#34;&gt;https://blog.csdn.net/fake_hydra/article/details/82414965&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;即：在 source 目录下建一个 CNAME 文件，没有后缀，里面写你的域名即可。&lt;/p&gt;
 &lt;h1 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h1&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC80MjQ1M2FmMDg1M2Q=&#34;&gt;GitHub Actions 部署 Hexo 小结&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dic3UyMDA0L2FydGljbGUvZGV0YWlscy8xMjI2NjExMTY=&#34;&gt;用 GitHub Actions 自动部署 Hexo&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;[利用 GitHub Actions 自动部署 Hexo 博客 全自动运行](&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3JlYWQvY3YxMDAxNjA2Mi8=&#34;&gt;利用 GitHub Actions 自动部署 Hexo 博客 全自动运行&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="Hexo" />
         <updated>2022-06-20T12:46:25.000Z</updated>
