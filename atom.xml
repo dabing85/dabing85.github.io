@@ -3,7 +3,7 @@
     <id>https://blog.dabing.cool</id>
     <title></title>
     <link href="https://blog.dabing.cool" />
-    <updated>2022-07-17T04:38:42.578Z</updated>
+    <updated>2022-07-17T05:24:52.862Z</updated>
     <category term="Hexo" />
     <category term="微服务" />
     <entry>
@@ -21,7 +21,7 @@
 &lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
 </content>
-        <updated>2022-07-17T04:38:42.578Z</updated>
+        <updated>2022-07-17T05:24:52.862Z</updated>
     </entry>
     <entry>
         <id>https://blog.dabing.cool/Hexo/hexo</id>
