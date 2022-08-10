@@ -27,7 +27,7 @@
   <meta name="keywords" content="Hexo" />
 
 
-<link rel="canonical" href="https://blog.dabing.cool/Hexo/hexo">
+<link rel="canonical" href="https://blog.dabing.cool/hexo">
 
 
 
@@ -117,12 +117,12 @@ Dabing =  = 不在能知，乃在能行</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,7 +153,7 @@ Dabing =  = 不在能知，乃在能行</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://blog.dabing.cool/Hexo/hexo">
+  <link itemprop="mainEntityOfPage" href="https://blog.dabing.cool/hexo">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="https://fastly.jsdelivr.net/gh/dabing85/dabing85.github.io@latest/images/avatar.jpg">
@@ -365,9 +365,9 @@ Dabing =  = 不在能知，乃在能行</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-08-10 14:41:23" itemprop="dateModified" datetime="2022-08-10T14:41:23+08:00">2022-08-10</time>
+    <time title="修改时间：2022-08-10 15:04:40" itemprop="dateModified" datetime="2022-08-10T15:04:40+08:00">2022-08-10</time>
   </span>
-  <span id="Hexo/hexo" class="item leancloud_visitors" data-flag-title="Hexo" title="阅读次数">
+  <span id="hexo" class="item leancloud_visitors" data-flag-title="Hexo" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -386,7 +386,7 @@ Dabing =  = 不在能知，乃在能行</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://blog.dabing.cool/Hexo/hexo" title="Hexo">https://blog.dabing.cool/Hexo/hexo</a>
+    <a href="https://blog.dabing.cool/hexo" title="Hexo">https://blog.dabing.cool/hexo</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -405,7 +405,7 @@ Dabing =  = 不在能知，乃在能行</title>
     <div class="item left">
       
 
-  <a href="/javamore/springcloud" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhpw3lwj20zk0m8gvw.jpg" title="SpringCloud2020">
+  <a href="/springcloud" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexoj0moj20zk0m8kgu.jpg" title="SpringCloud2020">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 微服务</span>
   <h3>SpringCloud2020</h3>
@@ -415,7 +415,7 @@ Dabing =  = 不在能知，乃在能行</title>
     <div class="item right">
       
 
-  <a href="/hello-world" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwrdwyaj20zk0m8are.jpg" title="Hello World">
+  <a href="/hello-world" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyonbf9j20zk0m8e81.jpg" title="Hello World">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>Hello World</h3>
@@ -441,7 +441,7 @@ Dabing =  = 不在能知，乃在能行</title>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/Hexo/hexo" rel="bookmark" title="Hexo">Hexo</a></li>
+          <li class="active"><a href="/hexo" rel="bookmark" title="Hexo">Hexo</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -519,7 +519,7 @@ Dabing =  = 不在能知，乃在能行</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/javamore/springcloud" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/springcloud" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -546,10 +546,9 @@ Dabing =  = 不在能知，乃在能行</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/javamore/" title="分类于 微服务">微服务</a>
 </div>
 
-    <span><a href="/javamore/springcloud" title="SpringCloud2020">SpringCloud2020</a></span>
+    <span><a href="/hello-world" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -559,16 +558,17 @@ Dabing =  = 不在能知，乃在能行</title>
 <a href="/categories/Hexo/" title="分类于 Hexo">Hexo</a>
 </div>
 
-    <span><a href="/Hexo/hexo" title="Hexo">Hexo</a></span>
+    <span><a href="/hexo" title="Hexo">Hexo</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="分类于 微服务">微服务</a>
 </div>
 
-    <span><a href="/hello-world" title="Hello World">Hello World</a></span>
+    <span><a href="/springcloud" title="SpringCloud2020">SpringCloud2020</a></span>
   </li>
 
   </ul>
@@ -602,7 +602,7 @@ Dabing =  = 不在能知，乃在能行</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'Hexo/hexo',
+    path: 'hexo',
     favicon: {
       show: "（●´3｀●）来了就太棒了！",
       hide: "(´Д｀)不要走嘛~~"
