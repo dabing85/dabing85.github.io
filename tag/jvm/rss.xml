@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;jvm&#34; tag</title>
+        <link>https://blog.dabing.cool</link>
+        <description>欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 01 Jan 2022 10:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 01 Jan 2022 10:00:00 +0800</lastBuildDate>
+        <category>Redis</category>
+        <category>Jedis</category>
+        <category>JVM</category>
+        <category>Hexo</category>
+        <category>Java新特性</category>
+        <category>微服务</category>
+        <category>SpringCloud</category>
+        <item>
+            <guid isPermalink="true">https://blog.dabing.cool/java/JVM-%E5%88%9D%E7%BA%A7/</guid>
+            <title>JVM-初级</title>
+            <link>https://blog.dabing.cool/java/JVM-%E5%88%9D%E7%BA%A7/</link>
+            <category>JVM</category>
+            <pubDate>Sat, 01 Jan 2022 10:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;参考：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3llcmVueXVhbl9wa3UvYXJ0aWNsZS9kZXRhaWxzLzEwMzMyMDc1Nw==&#34;&gt;https://blog.csdn.net/yerenyuan_pku/article/details/103320757&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一些常见面试题（全是理论）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;谈谈你对 JVM 的理解？Java8 虚拟机和之前的变化&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;什么是 OOM，什么是栈溢出 StackOverflowError？怎么分析？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​		OOM，全称是 Out Of Memory，内存用完了。（JVM 没有足够的内存来为对象分配空间并且垃圾		回收器也没有空间可以回收了，就会抛出这个 error）&lt;/p&gt;
+&lt;p&gt;​		 &lt;code&gt;原因&lt;/code&gt; ：1）分配的少了（启动时 VM 参数可以指定虚拟机本身可使用的内存大小）&lt;/p&gt;
+&lt;p&gt;​				  2）应用用的太多了（会造成内存泄露和内存溢出）&lt;/p&gt;
+&lt;p&gt;​		最常见的 OOM &lt;code&gt;情况&lt;/code&gt; ：&lt;/p&gt;
+&lt;p&gt;​				1）堆内存溢出&lt;/p&gt;
+&lt;p&gt;​				2）方法区溢出&lt;/p&gt;
+&lt;p&gt;​				3）StackOverflowError 栈溢出&lt;/p&gt;
+&lt;p&gt;​		 &lt;code&gt;分析&lt;/code&gt;  —heapdump&lt;/p&gt;
+&lt;p&gt;​				dump 堆的内存镜像，可以采用两种方式：&lt;/p&gt;
+&lt;p&gt;​					1. 设置 JVM 参数   HeapDumpOnOutOfMemoryError&lt;/p&gt;
+&lt;p&gt;​					2. 使用 JDK 自带的 jamp 命令   &amp;quot;jmap -dump:format=b,file=heap.bin &lt;pid&gt;&amp;quot;  其中 pid 可					以通过 jps 获取。&lt;/p&gt;
+&lt;p&gt;​			   dump 堆的内存镜像，使用工具分析：mat、jhat&lt;/p&gt;
+&lt;p&gt;​		详细解释：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vVGhpbmtWZW51cy9wLzY4MDU0OTUuaHRtbA==&#34;&gt;https://www.cnblogs.com/ThinkVenus/p/6805495.html&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;JVM 的常用调优参数有哪些？&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存快照如何抓取，怎么分析 Dump 文件？&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;谈谈 JVM 中类加载器你的认识？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一些概念理解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1jvm的位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1jvm的位置&#34;&gt;#&lt;/a&gt; 1.JVM 的位置&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/image-20220412105259491.png&#34; alt=&#34;image-20220412105259491&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2jvm的体系结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2jvm的体系结构&#34;&gt;#&lt;/a&gt; 2.JVM 的体系结构&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191130085643146.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3类加载器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3类加载器&#34;&gt;#&lt;/a&gt; 3. 类加载器&lt;/h2&gt;
+&lt;p&gt;作用：加载 class 文件，&lt;/p&gt;
+&lt;p&gt;类是模板，对象是具体的&lt;/p&gt;
+&lt;p&gt;具体对象放在堆里，对象引用放在栈里，存在的是对象的地址&lt;/p&gt;
+&lt;p&gt;getClass()&lt;/p&gt;
+&lt;p&gt;getClassLoader()&lt;/p&gt;
+&lt;p&gt;1. 类加载器收到类加载器的请求&lt;/p&gt;
+&lt;p&gt;2. 将这个请求向上委托给父类加载器去完成，一直向上委托，直到启动类加载器&lt;/p&gt;
+&lt;p&gt;3. 启动加载器检查是否能够加载当前类，能加载就结束，使用当前的加载器，否则，抛出异常，通知子加载器加载&lt;/p&gt;
+&lt;p&gt;4. 重复步骤 3&lt;/p&gt;
+&lt;p&gt;Class Not Found~&lt;/p&gt;
+&lt;p&gt;null:Java 调用不到，&lt;/p&gt;
+&lt;p&gt;Java：c+±- 去掉的繁琐部分，如指针、内存管理&lt;/p&gt;
+&lt;p&gt;类装载器（ClassLoader）负责加载 class 文件，class 文件在文件开头有特定的文件标示，ClassLoader 只负责 class 文件的加载，至于它是否可以运行，则由 Execution Engine 决定。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/image-20220412105420360.png&#34; alt=&#34;image-20220412105420360&#34;&gt;&lt;/p&gt;
+&lt;p&gt;jvm 虚拟机自带的类加载器有四种：&lt;/p&gt;
+&lt;p&gt;1. 启动类加载器（Bootstrap）：c++ 编写&lt;/p&gt;
+&lt;p&gt;2. 扩展类加载器（Extension）：Java 编写&lt;/p&gt;
+&lt;p&gt;3. 应用程序类加载器（AppClassLoader）：或者叫系统类加载器，用于加载当前应用 classpath 下的所有类&lt;/p&gt;
+&lt;p&gt;4. 用户自定义加载类：Java.lang.ClassLoader 的子类，用户可以定制类的加载方式&lt;/p&gt;
+&lt;p&gt;双亲委派，向上委托 4321&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191130095429988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4双亲委派机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4双亲委派机制&#34;&gt;#&lt;/a&gt; 4. 双亲委派机制&lt;/h2&gt;
+&lt;p&gt;类加载的时候的一个安全机制，为了保证安全&lt;/p&gt;
+&lt;p&gt;app（当前应用程序）-&amp;gt;exc (扩展)-&amp;gt;boot&lt;/p&gt;
+&lt;p&gt;如上图所示，自顶向下加载，保证代码安全，防止恶意代码对源代码的修改。&lt;/p&gt;
+&lt;h2 id=&#34;5沙箱安全机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5沙箱安全机制&#34;&gt;#&lt;/a&gt; 5. 沙箱安全机制&lt;/h2&gt;
+&lt;p&gt;详细说明参考：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vTXlTdHJpbmdJc05vdE51bGwvcC84MjY4MzUxLmh0bWw=&#34;&gt;https://www.cnblogs.com/MyStringIsNotNull/p/8268351.html&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;就是说你写了一个 Java 程序，默认情况你是可以任务访问这台机器的任何资源的。但是你把程序部署到正式的服务器上的时候，要保证你的程序不会对这个服务器有伤害，访问一些不该访问的资源。&lt;/p&gt;
+&lt;p&gt;消除安全隐患，有两种办法：&lt;/p&gt;
+&lt;p&gt;1. 让你的程序在一个限定权限的账号下运行&lt;/p&gt;
+&lt;p&gt;2. 利用 Java 的 &lt;code&gt;沙箱机制&lt;/code&gt; 来限定程序不为非作歹。&lt;/p&gt;
+&lt;p&gt;沙箱（sandbox）是一个限制程序运行的环境。沙箱机制就是将 Java 代码限定在虚拟机特性的运行范围，并且严格限制代码对本地系统资源访问，通过这样的措施来保证对代码的有效隔离。&lt;/p&gt;
+&lt;p&gt;组成沙箱的基本 &lt;code&gt;组件&lt;/code&gt; ：字节码校验器、类装载器、存取控制器、安全管理器、安全软件包&lt;/p&gt;
+&lt;p&gt;沙箱包含的 &lt;code&gt;要素&lt;/code&gt; ：权限、代码源、保护域、策略文件、密钥库&lt;/p&gt;
+&lt;h2 id=&#34;6native&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6native&#34;&gt;#&lt;/a&gt; 6.Native&lt;/h2&gt;
+&lt;p&gt;加个 native 关键字，说明 Java 的作用范围达不到了，会去调用底层 C 语言的库&lt;/p&gt;
+&lt;p&gt;会进入本地方法栈，调用本地方法接口，即 JNI&lt;/p&gt;
+&lt;p&gt;JNI 的作用：扩展 Java 的使用，融合不同的编程语言为 Java 使用！最初：C、C++&lt;/p&gt;
+&lt;p&gt;Java 诞生的时候：C、C&lt;ins&gt; 横行，想要立足，必须要调用 C、c&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;在 Execution 执行的时候，加载本地方法库&lt;/p&gt;
+&lt;p&gt;它再内存区域中专门开辟了一块标记区域，Native Method Stack &lt;code&gt;本地方法栈&lt;/code&gt; ，限定只标记了 &lt;code&gt;native&lt;/code&gt;  的方法才能塞进去。塞进去的方法但凡想要被执行，只能求助于操作系统，然后调用 &lt;code&gt;本地方法接口&lt;/code&gt; （操作系统的），调用本地方法接口时还需要 &lt;code&gt;本地方法库&lt;/code&gt; （类似于 jar 包，即 dll 动态连接库）的支持，最后，本地方法想要运行，还得把这个方法先做一个 &lt;code&gt;入栈&lt;/code&gt; 的操作。&lt;/p&gt;
+&lt;p&gt;目前这个方法使用的越来越少了，除非是跟硬件相关的应用，比如通过 Java 程序驱动打印机或者 Java 系统管理生产设备，在企业级应用中少见。因为现在的异构领域间的通信很发达，比如可以 Socket 通信，也可以使用 WebService 等。&lt;/p&gt;
+&lt;h2 id=&#34;7pc寄存器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7pc寄存器&#34;&gt;#&lt;/a&gt; 7.PC 寄存器&lt;/h2&gt;
+&lt;p&gt;每个线程都有一个程序计数器，线程私有，它是一个指针，指向方法区中的方法字节码（用来存储指向下一条指令的地址，即即将要执行的指令）由执行引擎读取下一条指令。&lt;/p&gt;
+&lt;p&gt;pc 寄存器（程序计数器）不是用来做存储的，是用来做计算的。&lt;/p&gt;
+&lt;h2 id=&#34;8方法区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8方法区&#34;&gt;#&lt;/a&gt; 8. 方法区&lt;/h2&gt;
+&lt;p&gt;方法区是被所有线程 &lt;code&gt;共享&lt;/code&gt; 的，所有字段和方法字节码，以及一些特殊方法如构造函数、接口代码等也在此定义。简单说，所有&lt;strong&gt;定义的方法&lt;/strong&gt;的信息都保存在该区域，此区属于共享区间。&lt;br&gt;
+类加载器把.class 文件读到内存里面变成 Class（元数据模板）之后，变成的 Class（元数据模板）就存放在方法区里面，相应地，所有的 Class（元数据模板）包含的信息都会放进去，包含的信息如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;静态变量、常量、类信息（构造函数、接口定义）、运行时的常量池存在方法区中，但是实例变量存在堆内存中，与方法区无关。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;static、final、Class 模板、常量池&lt;/p&gt;
+&lt;h2 id=&#34;9栈&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9栈&#34;&gt;#&lt;/a&gt; 9. 栈&lt;/h2&gt;
+&lt;p&gt;一种数据结构，先进后出、后进先出&lt;/p&gt;
+&lt;p&gt;程序 = 数据结构 + 算法：持续学习&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;码农 = 框架 + 业务逻辑&lt;/strong&gt;：吃饭&lt;/p&gt;
+&lt;p&gt;为什么 main 方法先执行，最后结束？&lt;/p&gt;
+&lt;p&gt;就是使用了栈&lt;/p&gt;
+&lt;p&gt;栈内存，&lt;strong&gt;主管程序的运行&lt;/strong&gt;，生命周期和线程同步&lt;/p&gt;
+&lt;p&gt;线程结束，栈内存也就释放了，对于栈来说，不存在垃圾回收问题&lt;/p&gt;
+&lt;p&gt;一旦线程结束，栈就 over 了&lt;/p&gt;
+&lt;p&gt;其中，8 种基本类型的变量 + 对象的引用变量 + 实例方法都是在函数的栈内存中分配的。&lt;/p&gt;
+&lt;p&gt;栈运行原理：栈中的数据都是以栈帧（Stack Frame）的格式存在，栈帧是一个&lt;strong&gt;内存块&lt;/strong&gt;，是一个&lt;strong&gt;数据集&lt;/strong&gt;，也是一个有关方法和运行期的数据集。当一个方法被调用时会产生一个栈帧。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191130120854385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;更加详细的栈内的内存结构如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191130135946805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;反正就是说，每执行一个方法都会产生一个栈帧，保存到栈的顶部，顶部栈就是当前的方法，该方法执行完毕后会自动将此栈帧出栈，这个栈帧被弹出栈的时候就证明这个方法执行完毕了。&lt;/p&gt;
+&lt;p&gt;栈满了：StackOverError&lt;/p&gt;
+&lt;h2 id=&#34;10三种jvm&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10三种jvm&#34;&gt;#&lt;/a&gt; 10. 三种 JVM&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sun 公司 HotSpot   命令行可以查&lt;/p&gt;
+&lt;p&gt;C:\Users\Lenovo&amp;gt;&lt;strong&gt;java -version&lt;/strong&gt;&lt;br&gt;
+java version “1.8.0_202”&lt;br&gt;
+Java™ SE Runtime Environment (build 1.8.0_202-b08)&lt;br&gt;
+Java HotSpot™ 64-Bit Server VM (build 25.202-b08, mixed mode)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;BEA 公司 JRockit  最快，适合财务那些业务，很少用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IBM 平台   j9 VM&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;11堆&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11堆&#34;&gt;#&lt;/a&gt; 11. 堆&lt;/h2&gt;
+&lt;p&gt;heap，一个 jvm 只有一个堆内存，堆内存的大小是可以调节的&lt;/p&gt;
+&lt;p&gt;类加载器读取了类文件后，一般会把什么东西放在堆中？类，方法，常变量～，保存我们所有引用类型的真实对象&lt;/p&gt;
+&lt;p&gt;堆内存还要细分为三个区：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新生区（伊甸园、幸存区（过度到养老区））&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;养老区：一般不会被干掉&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;永久区&lt;/p&gt;
+&lt;p&gt;1.8 之后永久区用元空间代替了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GC 垃圾回收，主要是在伊甸园区和养老区&lt;/p&gt;
+&lt;p&gt;假设内存满，OOM，堆内存不够  OutOfMemoryError&lt;/p&gt;
+&lt;h2 id=&#34;12新生区-老年区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12新生区-老年区&#34;&gt;#&lt;/a&gt; 12. 新生区、老年区&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新生区：&lt;/p&gt;
+&lt;p&gt;类诞生和成长，甚至死亡的地方&lt;/p&gt;
+&lt;p&gt;伊甸园区：所有的对象都是在伊甸园区 new 出来&lt;/p&gt;
+&lt;p&gt;幸存区（0、1）：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;真相：经过研究，99% 的对象都是临时对象！&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191130155437604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个图一目了然&lt;/p&gt;
+&lt;h2 id=&#34;13永久区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13永久区&#34;&gt;#&lt;/a&gt; 13. 永久区&lt;/h2&gt;
+&lt;p&gt;这个区域常驻内存的，用来存放 JDK 自身携带的 class 对象。Interface 元数据，存储的是 Java 运行时的一些环境或类信息，这个区域不存在垃圾回收，关闭虚拟就会释放这个区域的内存&lt;/p&gt;
+&lt;p&gt;jdk1.6 之前：永久代，常量池是在方法区&lt;/p&gt;
+&lt;p&gt;jdk1.7：永久代，但是慢慢退化了，去永久化，常量池在堆中&lt;/p&gt;
+&lt;p&gt;jdk1.8：无永久代，常量池在元空间&lt;/p&gt;
+&lt;p&gt;方法区在元空间里，即堆里，也叫非堆（方法区相当于一个接口，而元空间时它的一个实现）&lt;/p&gt;
+&lt;p&gt;方法区里有一个小空间是常量池&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/4496/image-20220412105527906.png&#34; alt=&#34;image-20220412105527906&#34;&gt;&lt;/p&gt;
+&lt;p&gt;方法区的实现：永久区、元空间&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://pic4.zhimg.com/v2-44c0f4dd02b0bbdd1b5524671e419e2f_r.jpg&#34; alt=&#34;preview&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;14堆内存调优&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#14堆内存调优&#34;&gt;#&lt;/a&gt; 14 堆内存调优&lt;/h2&gt;
+&lt;p&gt;参考链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3llcmVueXVhbl9wa3UvYXJ0aWNsZS9kZXRhaWxzLzEwMzMyNzQ2Mz9zcG09MTAwMS4yMDE0LjMwMDEuNTUwMg==&#34;&gt;https://blog.csdn.net/yerenyuan_pku/article/details/103327463?spm=1001.2014.3001.5502&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Java8 堆内存的分布情况：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204102404945.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;要多堆内存进行调优，必然要接触到以下三个参数：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204102413924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用：在调节 VM 参数的窗口设置：-Xms1024m -Xmx1024m -XX:+PrintGCDetails&lt;/p&gt;
+&lt;p&gt;在控制台打印相关信息&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204102500573.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204102507962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	所以这里设置的内存大小只包括新生区和养老区的总和大小，即调整的是物理上的堆内存大小。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当出现 OOM 内存不足的时候如果查看信息和分析信息呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前面面试题第二题其实也说过了，下面放一些示例的图片：&lt;/p&gt;
+&lt;p&gt;设置把堆内存镜像 dump 出：使用 JVM 参数&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204133820938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用 mat 工具分析 dump 文件：（是 eclipse 的工具，可以在上面安装即可）&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204133900746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上面生成的 dump 文件是默认存储在工程的根目录下，用 - &lt;code&gt;XX:HeapDumpPath=目录&lt;/code&gt; 这个参数可以修改 dump 文件的位置&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204135217905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样就可以在 D 盘看到这个 dump 文件了&lt;/p&gt;
+&lt;p&gt;如果使用的不用 eclipse 工具，也可以使用 jdk 自带的 &lt;code&gt;jvisualvm.exe&lt;/code&gt;  工具来解析 dump 文件，在安装路径的 bin 目录下，直接双击这个程序，打开对应的 dump 文件就可以了。&lt;/p&gt;
+&lt;h2 id=&#34;15gc-常用方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#15gc-常用方法&#34;&gt;#&lt;/a&gt; 15.GC  常用方法&lt;/h2&gt;
+&lt;p&gt;参考链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3llcmVueXVhbl9wa3UvYXJ0aWNsZS9kZXRhaWxzLzEwMzM4NzMxMj9zcG09MTAwMS4yMDE0LjMwMDEuNTUwMg==&#34;&gt;https://blog.csdn.net/yerenyuan_pku/article/details/103387312?spm=1001.2014.3001.5502&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是 GC？就是分代收集算法。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204151857145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GC 的作用域？&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204151912657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;GC 按照回收的区域分为普通 GC 也叫 &lt;code&gt;轻量级GC&lt;/code&gt;  (Minor GC)，一种是全局 GC 也叫 &lt;code&gt;重量级GC&lt;/code&gt; (Major GC or Full GC)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204161125942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GC 的四大算法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;引用计数法：&lt;/code&gt; 在程序 new 一个对象出来的时候，我们给他一个计数器，有人引用这个对象的时候，这个计数器就自增 1，引用取消的时候减 1，当计数器为 0 的时候就 JVM 就可以把他回收掉了。&lt;/p&gt;
+&lt;p&gt;已经淘汰了！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​		 &lt;code&gt;复制算法&lt;/code&gt; （Copying）: 更详细的讲解可以看链接啦。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204172041291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​			就是说 new 对象放在伊甸园区，&lt;/p&gt;
+&lt;p&gt;​			然后再第一次进行垃圾回收的时候勒，就将存活下来的对象 copy 到幸存 0 区，&lt;/p&gt;
+&lt;p&gt;​			然后第二次将存活的对象（包括伊甸园和幸存 0 区）copy 到幸存 1 区，清空幸存 0 区了；&lt;/p&gt;
+&lt;p&gt;​			然后继续第三次的时候将伊甸园和 1 区的对象 copy 到 0 区，这样反复。&lt;/p&gt;
+&lt;p&gt;​			到 15 次（默认，可以通过  &lt;code&gt;-XX:MaxTenuringThreshold&lt;/code&gt;  设置）还活下来的话就复制到老年区&lt;/p&gt;
+&lt;p&gt;​		 &lt;code&gt;标记清除算法&lt;/code&gt; 在内存用满的时候，GC 线程触发把程序暂停，然后堆内存遍历两次，第一次&lt;strong&gt;标记&lt;/strong&gt;		被引用的对象，要存活下来，第二次&lt;strong&gt;清除&lt;/strong&gt;没被标记的对象。&lt;/p&gt;
+&lt;p&gt;​		但是这时候内存的碎片的。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204185818964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​		 &lt;code&gt;标记压缩算法&lt;/code&gt; 老年代一般是由标记清除或者是标记清除与标记整理的混合实现。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204185833455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​	 &lt;code&gt;	标记清除压缩算法&lt;/code&gt; 就是上面两种算法的结合，先用多次的标记清除，然后这时候内存空间已经千疮百孔了，到处都是内存碎片，然后这时候统一用一次标记压缩就好了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204185839681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;三种算法总结：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204200152400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20191204200203963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9saWF5dW4uYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;基于上面的考虑，老年代一般是由标记清除或者是标记清除与标记压缩的混合实现。以 HotSpot 中的 CMS 回收器为例（只限于 Java8），CMS 是基于 Mark-Sweep 实现的，对于对象的回收效率很高，而对于碎片问题，CMS 采用基于 Mark-Compact 算法的 Serial Old 回收器做为补偿措施：当内存回收不佳（碎片导致的 Concurrent Mode Failure 时），将采用 Serial Old 执行 Full GC 以达到对老年代内存的整理。&lt;/p&gt;
+&lt;h2 id=&#34;16jmm&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#16jmm&#34;&gt;#&lt;/a&gt; 16.JMM&lt;/h2&gt;
+&lt;p&gt;参考链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNTgzOTMxMzk=&#34;&gt;https://zhuanlan.zhihu.com/p/258393139&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;温馨提醒一下，这里有些人会把 Java 内存模型误解为 Java 内存结构，然后答到堆，栈，GC 垃圾回收，最后和面试官想问的问题相差甚远。&lt;strong&gt;实际上一般问到 Java 内存模型都是想问多线程，Java 并发相关的问题&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果面试的话，重点是 Java 内存模型 (JMM) 的 &lt;code&gt;工作方式&lt;/code&gt; ， &lt;code&gt;三大特征&lt;/code&gt; ，还有 &lt;code&gt;volatile&lt;/code&gt;  关键字。为什么喜欢问 volatile 关键字呢，因为 volatile 关键字可以扯出很多东西，比如可见性，有序性，还有内存屏障等等。&lt;/p&gt;
+&lt;p&gt;全称 Java Memory Model，JMM，Java 内存模型，它不仅仅是 JVM 内存分区。&lt;/p&gt;
+&lt;p&gt;那这个 JMM 到底是什么东东啊？&lt;/p&gt;
+&lt;p&gt;用来干嘛的？&lt;/p&gt;
+&lt;p&gt;因为硬件生产商和操作系统的不同，内存的访问就有一定的差异，为了避免相同的代码在不同的系统下运行出现各种问题，Java 内存模型（JMM）就屏蔽掉各种硬件和操作系统的内存访问差异，实现让 Java 在不同的平台下都有相同的并发效果。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;工作方式&lt;/code&gt; ：&lt;/p&gt;
+&lt;p&gt;Java 内存模型规定&lt;strong&gt;所有的变量都存储在主内存&lt;/strong&gt;中，包括实例变量，静态变量，但是不包括局部变量和方法参数。每个线程都有自己的工作内存，&lt;strong&gt;线程的工作内存保存了该线程用到的变量和主内存的副本拷贝，线程对变量的操作都在工作内存中进行&lt;/strong&gt;。&lt;strong&gt;线程不能直接读写主内存中的变量&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;不同的线程之间也无法访问对方工作内存中的变量。线程之间变量值的传递均需要通过主内存来完成。&lt;/p&gt;
+&lt;p&gt;每个线程的工作内存都是独立的，线程操作数据只能在工作内存中进行，然后刷回到主存。这是 Java 内存模型定义的线程基本工作方式。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://pic3.zhimg.com/v2-f36f366c07a6188ea3fdefc794ba021a_r.jpg&#34; alt=&#34;preview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;三个特征&lt;/code&gt; ：原子性、可见性、有序性&lt;/p&gt;
+&lt;p&gt;​	原子性（synchronized）&lt;/p&gt;
+&lt;p&gt;​	可见性（volatile、synchronized、final）&lt;/p&gt;
+&lt;p&gt;​	有序性（volatile、synchronized）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;八大内存交互操作&lt;/code&gt; ：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://pic4.zhimg.com/v2-42d8f894f17ccf13252d8d8d6285f86b_r.jpg&#34; alt=&#34;preview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;volatile&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;​	1. 保证线程间变量的可见性&lt;/p&gt;
+&lt;p&gt;​	2. 禁止 CPU 进行指令重排序&lt;/p&gt;
+&lt;h2 id=&#34;17总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#17总结&#34;&gt;#&lt;/a&gt; 17 总结&lt;/h2&gt;
+&lt;p&gt;1. 百度&lt;/p&gt;
+&lt;p&gt;2. 思维导图&lt;/p&gt;
+&lt;p&gt;单点登录 | SSO&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
