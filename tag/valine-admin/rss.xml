@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;valine-admin&#34; tag</title>
+        <link>https://blog.dabing.cool</link>
+        <description>欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 30 Aug 2022 22:46:25 +0800</pubDate>
+        <lastBuildDate>Tue, 30 Aug 2022 22:46:25 +0800</lastBuildDate>
+        <category>算法</category>
+        <category>成功日记</category>
+        <category>打卡</category>
+        <category>脱发</category>
+        <category>补牙</category>
+        <category>Hexo</category>
+        <category>Valine-Admin</category>
+        <category>ssl</category>
+        <category>https</category>
+        <category>git</category>
+        <category>RabbitMQ</category>
+        <category>Redis</category>
+        <category>Jedis</category>
+        <category>JVM</category>
+        <category>Java新特性</category>
+        <category>微服务</category>
+        <category>SpringCloud</category>
+        <item>
+            <guid isPermalink="true">https://blog.dabing.cool/hexo/Valine-Admin/</guid>
+            <title>使用Valine-Admin实现评论邮件提醒</title>
+            <link>https://blog.dabing.cool/hexo/Valine-Admin/</link>
+            <category>Hexo</category>
+            <category>Valine-Admin</category>
+            <pubDate>Tue, 30 Aug 2022 22:46:25 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;作者：dabing（王甜甜）&lt;br&gt;
+valine 文档：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92YWxpbmUuanMub3JnL25vdGlmeS5odG1s&#34;&gt;https://valine.js.org/notify.html&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;github 地址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0Rlc2VydHNQL1ZhbGluZS1BZG1pbg==&#34;&gt;https://github.com/DesertsP/Valine-Admin&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;使用说明参考：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3poYW9qdW4xOTk4L1ZhbGluZS1BZG1pbg==&#34;&gt;https://github.com/zhaojun1998/Valine-Admin&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;为啥用这个呢？人官方推荐的，那肯定是比较适配的了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901102318063.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用这个 valine-admin 评论前提是你前面的评论系统已经正常使用，并且 leancloud 数据存储也配好了。&lt;/p&gt;
+&lt;p&gt;就只是添加一个邮件提醒的功能而已。&lt;/p&gt;
+&lt;p&gt;以上评论系统的怎么配？可以参考 valine 的官网文档，很详细：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92YWxpbmUuanMub3JnL3F1aWNrc3RhcnQuaHRtbA==&#34;&gt;https://valine.js.org/quickstart.html&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;在-leancloud-部署-valine-admin&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在-leancloud-部署-valine-admin&#34;&gt;#&lt;/a&gt; 在 LeanCloud 部署 Valine-Admin&lt;/h1&gt;
+&lt;p&gt;进入&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb25zb2xlLmxlYW5jbG91ZC5jbi9hcHBz&#34;&gt; LeanCloud&lt;/span&gt; 对应的 Valine 应用里去。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901103247667.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-部署-git-项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-部署-git-项目&#34;&gt;#&lt;/a&gt; 1. 部署 git 项目&lt;/h2&gt;
+&lt;p&gt;点击  &lt;code&gt;云引擎&lt;/code&gt;  -&amp;gt;  &lt;code&gt;WEB&lt;/code&gt;  -&amp;gt;  &lt;code&gt;部署&lt;/code&gt;  ，按 github 所说，在部署项目中填写代码库：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3poYW9qdW4xOTk4L1ZhbGluZS1BZG1pbg==&#34;&gt;https://github.com/zhaojun1998/Valine-Admin&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;手动部署，再点击部署按钮即可。&lt;/p&gt;
+&lt;p&gt;但是作者这个代码 node.js 是 6 版本的，版本不对，使用作者的可能会部署失败。这个后面展示。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901105142332.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：会报如下这样的错&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901105317095.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;由于 node.js 版本过低导致。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把作者的项目 fork 到自己仓库下，修改 package.json 的 node 版本为 12.x 即可&lt;/li&gt;
+&lt;li&gt;当然也可以直接使用我的地址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2RhYmluZzg1L1ZhbGluZS1BZG1pbg==&#34;&gt;https://github.com/dabing85/Valine-Admin&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901110153266.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-邮件环境变量配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-邮件环境变量配置&#34;&gt;#&lt;/a&gt; 2. 邮件环境变量配置&lt;/h2&gt;
+&lt;p&gt;点击  &lt;code&gt;云引擎&lt;/code&gt;  -&amp;gt;  &lt;code&gt;WEB&lt;/code&gt;  -&amp;gt;  &lt;code&gt;设置&lt;/code&gt;  ，添加环境变量，添加变量如下：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901144642095.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我添加的都是必填，再加一个域名的参数:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SITE_NAME&lt;/strong&gt; : 网站名称。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SITE_URL&lt;/strong&gt; : 网站地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SMTP_USER&lt;/strong&gt; : SMTP 服务用户名，一般为邮箱地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SMTP_PASS&lt;/strong&gt; : SMTP 密码，一般为授权码，而不是邮箱的登陆密码，请自行查询对应邮件服务商的获取方式。&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zZXJ2aWNlLm1haWwucXEuY29tL2NnaS1iaW4vaGVscD9zdWJ0eXBlPTEmYW1wO2lkPTI4JmFtcDtubz0xMDAxMjU2&#34;&gt;QQ 邮箱获取授权码&lt;/span&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2hlbHAubWFpbC4xNjMuY29tL2ZhcURldGFpbC5kbz9jb2RlPWQ3YTVkYzg0NzFjZDBjMGU4YjRiOGY0ZjhlNDk5OThiMzc0MTczY2ZlOTE3MTMwNWZhMWNlNjMwZDdmNjdhYzJjZGE4MDE0NWExNzQyNTE2&#34;&gt;网易邮箱获取授权码&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SMTP_SERVICE&lt;/strong&gt; : 邮件服务提供商，支持  &lt;code&gt;QQ&lt;/code&gt;  、  &lt;code&gt;163&lt;/code&gt;  、  &lt;code&gt;126&lt;/code&gt;  、  &lt;code&gt;Gmail&lt;/code&gt;  、 &lt;code&gt;Yahoo&lt;/code&gt;  、 … ，全部支持请参考 : &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ub2RlbWFpbGVyLmNvbS9zbXRwL3dlbGwta25vd24vI3N1cHBvcnRlZC1zZXJ2aWNlcw==&#34;&gt;Nodemailer Supported services&lt;/span&gt;。 — 如这里没有你使用的邮件提供商，请查看&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2RhYmluZzg1L1ZhbGluZS1BZG1pbi9ibG9iL21hc3Rlci8lRTklQUIlOTglRTclQkElQTclRTklODUlOEQlRTclQkQlQUUubWQjJUU4JTg3JUFBJUU1JUFFJTlBJUU0JUI5JTg5JUU5JTgyJUFFJUU0JUJCJUI2JUU2JTlDJThEJUU1JThBJUExJUU1JTk5JUE4&#34;&gt;自定义邮件服务器&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SENDER_NAME&lt;/strong&gt;: 寄件人名称。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SENDER_EMAIL&lt;/strong&gt; : 发件人邮箱&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;也有其他可选参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ADMIN_URL&lt;/strong&gt; ： [建议] Web 主机二级域名（云引擎域名），用于自动唤醒&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BLOGGER_EMAIL&lt;/strong&gt; ： [可选] 博主通知收件地址，默认使用 SENDER_EMAIL&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AKISMET_KEY&lt;/strong&gt; ： [可选] Akismet Key 用于垃圾评论检测，设为 MANUAL_REVIEW 开启人工审核，留空不使用反垃圾&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果没绑定域名的话，可以不填 ADMIN_URL 这个参数，也能用，只不过 leancloud 每天会有休眠 6 小时，没有请求 30 分钟就会休眠了，绑定域名是为了能做定时任务自动唤醒。(下面会做展示)&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901145720995.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成上面两步其实都已经可以使用了。不记得要不要重启了。自己测试测试。&lt;/p&gt;
+&lt;h2 id=&#34;3-leancloud-休眠策略&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-leancloud-休眠策略&#34;&gt;#&lt;/a&gt; 3. LeanCloud 休眠策略&lt;/h2&gt;
+&lt;p&gt;参考：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3poYW9qdW4xOTk4L1ZhbGluZS1BZG1pbi9ibG9iL21hc3Rlci8lRTklQUIlOTglRTclQkElQTclRTklODUlOEQlRTclQkQlQUUubWQjbGVhbmNsb3VkLSVFNCVCQyU5MSVFNyU5QyVBMCVFNyVBRCU5NiVFNyU5NSVBNQ==&#34;&gt;LeanCloud 休眠策略&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;绑定域名&lt;/li&gt;
+&lt;li&gt;添加上配置项（环境变量）&lt;/li&gt;
+&lt;li&gt;配置定时任务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;绑定域名&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;同样在  &lt;code&gt;云引擎&lt;/code&gt;  -&amp;gt;  &lt;code&gt;WEB&lt;/code&gt;  -&amp;gt;  &lt;code&gt;设置&lt;/code&gt;  ，绑定域名。&lt;/p&gt;
+&lt;p&gt;据说以前是有 leancloud 有提供以前共享的二级域名，但是现在取消了，我这个是自己在腾讯云租的一年，618 租的，才十几块钱一年。&lt;/p&gt;
+&lt;p&gt;编一个三级域名，为了好区分我直接写 leancloud。 然后去腾讯云解析域名，记录类型是 CNAME，记录值填 leancloud 推荐的那个节点，即我下面框起来的那个。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901150934361.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解析完之后等等刷新一下，就显示已绑定状态了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901151247337.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;添加上配置项（环境变量）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;即 &lt;strong&gt;ADMIN_URL&lt;/strong&gt; ：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sZWFuY2xvdWQuZGFiaW5nLmNvb2wv&#34;&gt;https://leancloud.dabing.cool/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;可以看我上边的截图&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;配置定时任务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;点击  &lt;code&gt;定时任务&lt;/code&gt;  -&amp;gt;  &lt;code&gt;创建定时任务&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220905143608005.png&#34; alt=&#34;image-20220905143608005&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;self_wake&lt;/code&gt;  ，cron 表达式：  &lt;code&gt;0 */30 0-16 * * ?&lt;/code&gt;  ，表示每天 0 点到 16 点每半小时唤醒一次&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;resend_mails&lt;/code&gt;  ， cron 表达式：  &lt;code&gt;0 0 0 * * ?&lt;/code&gt;  ，表示检查 24 小时以前有无漏发邮件，有则重发 再到部署出重启部署即可。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220901151813671.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;成功唤醒的状态码是 200&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://www.vipyubai.top//dabing/image-20220901152512376.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;补充&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#补充&#34;&gt;#&lt;/a&gt; 补充&lt;/h2&gt;
+&lt;p&gt;配置了定时任务之后当天我没发现什么问题，过两天我发现日志里有报错信息：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;quot;error&amp;quot;:&amp;quot; 因流控原因，通过定时任务唤醒体验版实例失败，建议升级至标准版云引擎实例避免休眠&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;也有成功的时候，大部分都是从 7 点开始就是唤醒失败的。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/image-20220905150734160.png&#34; alt=&#34;image-20220905150734160&#34;&gt;&lt;/p&gt;
+&lt;p&gt;百度了一下：&lt;/p&gt;
+&lt;p&gt;大家可以参考 [优雅解决 LeanCloud 流控问题](&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNjI4OTUw&#34;&gt;优雅解决 LeanCloud 流控问题 - 腾讯云开发者社区 - 腾讯云 (tencent.com)&lt;/span&gt;), 或者再百度看看别的。我不折腾了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://image.dabing.cool/image/kf7k2w33cj.png&#34; alt=&#34;preload&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

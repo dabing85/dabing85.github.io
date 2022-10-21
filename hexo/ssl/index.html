@@ -1,0 +1,572 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://blog.dabing.cool/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="https://blog.dabing.cool/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="https://blog.dabing.cool/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Hexo,ssl,https" />
+
+
+<link rel="canonical" href="https://blog.dabing.cool/hexo/ssl/">
+
+
+
+  <title>
+服务器配置hexo开启https（ssl证书） - Hexo |
+Dabing =  = 不在能知，乃在能行</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">服务器配置hexo开启https（ssl证书）
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-09-05 21:46:25">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-09-05T21:46:25+08:00">2022-09-05</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Dabing</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/hexo/" itemprop="item" rel="index" title="分类于 Hexo"><span itemprop="name">Hexo</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://blog.dabing.cool/hexo/ssl/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Dabing-He">
+    <meta itemprop="description" content="不在能知，乃在能行, 欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>作者：dabing（王甜甜）</p>
+<p>参加了又拍云的联盟活动，白嫖的 10G 的存储空间 + 15GB 的 CDN 免费流量，有域名并且已经备案的有网站的小伙伴也可以去试试：<span class="exturl" data-url="aHR0cHM6Ly93d3cudXB5dW4uY29tL2xlYWd1ZQ==">又拍云联盟 - 开发者帮助计划，为开发者加速 - 又拍云 (upyun.com)</span></p>
+<p><img data-src="http://image.dabing.cool/image/image-20220909084820511.png" alt="image-20220909084820511"></p>
+<p>顺便申请了免费的 SSL 证书，你看我的小站现在是 https 开头的啦～～～</p>
+<p>一些申领过程可以参考我友链中余白的博客：<span class="exturl" data-url="aHR0cHM6Ly93d3cudmlweXViYWkudG9wL3Bvc3QvYTQyYmVmYzYuaHRtbA==">hexo 的优化：又拍云 cdn 加速 | 余白の小屋 (vipyubai.top)</span></p>
+<p>我这里只是记录一下我在服务器 nginx 如何开启 https（SSL 证书）</p>
+<h1 id="获取证书"><a class="markdownIt-Anchor" href="#获取证书">#</a> 获取证书</h1>
+<p>先从你的又拍云平台把已经颁发了的证书下载下来。</p>
+<p>我的下载下来有两个文件：</p>
+<ul>
+<li>blog.dabing.cool.crt</li>
+<li>blog.dabing.cool.key</li>
+</ul>
+<p><img data-src="http://image.dabing.cool/image/image-20220909085441872.png" alt="image-20220909085441872"></p>
+<h1 id="服务器配置nginx"><a class="markdownIt-Anchor" href="#服务器配置nginx">#</a> 服务器配置 nginx</h1>
+<p>我参考的这篇文章：<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC84NTA0MDYyNQ==">Nginx 配置 SSL 证书</span></p>
+<p>懒得再写一次了，这里记录一下我的配置</p>
+<h2 id="1-先检测一下自己的环境是否允许"><a class="markdownIt-Anchor" href="#1-先检测一下自己的环境是否允许">#</a> 1. 先检测一下自己的环境是否允许：</h2>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>nginx <span class="token parameter variable">-V</span></pre></td></tr></table></figure><p>看到这个 <code>--with-stream_ssl_module</code>  那就 ok</p>
+<p><img data-src="http://image.dabing.cool/image/image-20220909090711795.png" alt="image-20220909090711795"></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>openssl version</pre></td></tr></table></figure><p><img data-src="http://image.dabing.cool/image/image-20220909090843974.png" alt="image-20220909090843974"></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">open</span>  <span class="token comment"># 查询是否安装 openssl</span></pre></td></tr></table></figure><p><img data-src="http://image.dabing.cool/image/image-20220909091040936.png" alt="image-20220909091040936"></p>
+<h2 id="2-confd的文件配置"><a class="markdownIt-Anchor" href="#2-confd的文件配置">#</a> 2. conf.d/ 的文件配置</h2>
+<p>再你的 etc/nginx/conf.d/ 文件夹下创建一个文件，我的是 <code>etc/nginx/conf.d/blog.conf</code></p>
+<p>我的配置内容如下：</p>
+<p>值得注意的是：# 如果你的 ssl on 爆红或者你的 nginx 是 1.15.x 以上版本的话</p>
+<p>得将 <code>listen 443</code>  和 <code>ssl on</code>  改成 <code>listen 443 ssl </code></p>
+<figure class="highlight nginx"><figcaption data-lang="nginx"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>  <span class="token comment"># 如果你的 ssl on 爆红或者你的 nginx 是 1.15 以上版本的话，</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token directive"><span class="token keyword">server_name</span> blog.dabing.cool</span><span class="token punctuation">;</span>     <span class="token comment"># 填写绑定证书的域名</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_certificate</span> /etc/nginx/cert/blog.dabing.cool.crt</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_certificate_key</span> /etc/nginx/cert/blog.dabing.cool.key</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>    <span class="token comment"># 按照这个协议配置</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span><span class="token punctuation">;</span>     <span class="token comment"># 按照这个套件配置</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token directive"><span class="token keyword">root</span> /var/www/hexo</span><span class="token punctuation">;</span>    <span class="token comment"># 站点目录</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token directive"><span class="token keyword">index</span>  index.html index.htm</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token directive"><span class="token keyword">server</span></span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token directive"><span class="token keyword">listen</span>       <span class="token number">80</span> default_server</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token directive"><span class="token keyword">listen</span>       [::]:80 default_server</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token directive"><span class="token keyword">server_name</span>  xxx.xx.xxx.xx</span><span class="token punctuation">;</span> <span class="token comment"># 这里可以填你的主机 ip</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token directive"><span class="token keyword">root</span>         /var/www/hexo</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token directive"><span class="token keyword">rewrite</span> ^(.*) https://blog.dabing.cool</span><span class="token punctuation">;</span>   <span class="token comment"># 添加的语句</span></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>然后重启 nginx 即可：</p>
+<p><code>systemctl restart nginx.service</code>  重启</p>
+<p>如果你遇到类似这样的错误：</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>Job <span class="token keyword">for</span> nginx.service failed because the control process exited with error code. See <span class="token string">"systemctl status nginx.service"</span> and <span class="token string">"journalctl -xe"</span> <span class="token keyword">for</span> details.</pre></td></tr></table></figure><p>有可能是你的 80 端口或者 443 端口被占用着，命令查看一下</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> nginx</pre></td></tr></table></figure><p>有就把进程杀掉，再重启即可。</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">kill</span> <span class="token parameter variable">-9</span> pid</pre></td></tr></table></figure><p>再访问看看：<a href="https://blog.dabing.cool/">https://blog.dabing.cool/</a></p>
+<p><img data-src="http://image.dabing.cool/image/image-20220909100723165.png" alt="image-20220909100723165"></p>
+
+      <div class="tags">
+          <a href="/tags/Hexo/" rel="tag"><i class="ic i-tag"></i> Hexo</a>
+          <a href="/tags/ssl/" rel="tag"><i class="ic i-tag"></i> ssl</a>
+          <a href="/tags/https/" rel="tag"><i class="ic i-tag"></i> https</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-10-21 14:07:12" itemprop="dateModified" datetime="2022-10-21T14:07:12+08:00">2022-10-21</time>
+  </span>
+  <span id="hexo/ssl/" class="item leancloud_visitors" data-flag-title="服务器配置hexo开启https（ssl证书）" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Dabing-He <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.dabing.cool/hexo/ssl/" title="服务器配置hexo开启https（ssl证书）">https://blog.dabing.cool/hexo/ssl/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/diary/%E6%89%93%E5%8D%A1%E6%97%A5%E8%AE%B0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.dabing.cool&#x2F;image&#x2F;image-20221019204552787.png" title="打卡日记">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 随便记</span>
+  <h3>打卡日记</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/algorithm/%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhnx9glj20zk0m8npd.jpg" title="随机函数-新手">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 算法-新手</span>
+  <h3>随机函数-新手</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%81%E4%B9%A6"><span class="toc-number">1.</span> <span class="toc-text"> 获取证书</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEnginx"><span class="toc-number">2.</span> <span class="toc-text"> 服务器配置 nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%88%E6%A3%80%E6%B5%8B%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E7%8E%AF%E5%A2%83%E6%98%AF%E5%90%A6%E5%85%81%E8%AE%B8"><span class="toc-number">2.1.</span> <span class="toc-text"> 1. 先检测一下自己的环境是否允许：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-confd%E7%9A%84%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 2. conf.d&#x2F; 的文件配置</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/hexo/hexo/" rel="bookmark" title="Hexo">Hexo</a></li><li><a href="/hexo/Valine-Admin/" rel="bookmark" title="使用Valine-Admin实现评论邮件提醒">使用Valine-Admin实现评论邮件提醒</a></li><li class="active"><a href="/hexo/ssl/" rel="bookmark" title="服务器配置hexo开启https（ssl证书）">服务器配置hexo开启https（ssl证书）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Dabing-He"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Dabing-He</p>
+  <div class="description" itemprop="description">欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">19</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">9</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">17</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RhYmluZzg1" title="https:&#x2F;&#x2F;github.com&#x2F;dabing85"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/diary/%E6%89%93%E5%8D%A1%E6%97%A5%E8%AE%B0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/algorithm/%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%BF%9B%E9%98%B6/" title="分类于 进阶">进阶</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%BF%9B%E9%98%B6/cache/" title="分类于 缓存">缓存</a>
+</div>
+
+    <span><a href="/javamore/cache/redis%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A0%A1%E9%AA%8C/" title="Redis实现手机验证码校验">Redis实现手机验证码校验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/java/git/" title="git">git</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E9%9A%8F%E4%BE%BF%E8%AE%B0/" title="分类于 随便记">随便记</a>
+</div>
+
+    <span><a href="/diary/%E8%84%B1%E5%8F%91%E6%97%A5%E8%AE%B0/" title="脱发日记">脱发日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="分类于 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E6%96%B0%E6%89%8B/" title="分类于 算法-新手">算法-新手</a>
+</div>
+
+    <span><a href="/algorithm/%E4%BA%8C%E5%88%86%E6%B3%95/" title="二分法、动态数组、哈希表-新手">二分法、动态数组、哈希表-新手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E9%9A%8F%E4%BE%BF%E8%AE%B0/" title="分类于 随便记">随便记</a>
+</div>
+
+    <span><a href="/diary/%E6%88%90%E5%8A%9F%E6%97%A5%E8%AE%B0/" title="成功日记">成功日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 Hexo">Hexo</a>
+</div>
+
+    <span><a href="/hexo/Valine-Admin/" title="使用Valine-Admin实现评论邮件提醒">使用Valine-Admin实现评论邮件提醒</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%BF%9B%E9%98%B6/" title="分类于 进阶">进阶</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E8%BF%9B%E9%98%B6/cache/" title="分类于 缓存">缓存</a>
+</div>
+
+    <span><a href="/javamore/cache/Redis/" title="Redis">Redis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="分类于 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E6%96%B0%E6%89%8B/" title="分类于 算法-新手">算法-新手</a>
+</div>
+
+    <span><a href="/algorithm/%E7%AE%80%E5%8D%95%E6%8E%92%E5%BA%8F/" title="简单排序-新手">简单排序-新手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="分类于 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E6%96%B0%E6%89%8B/" title="分类于 算法-新手">算法-新手</a>
+</div>
+
+    <span><a href="/algorithm/%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0/" title="随机函数-新手">随机函数-新手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 Hexo">Hexo</a>
+</div>
+
+    <span><a href="/hexo/ssl/" title="服务器配置hexo开启https（ssl证书）">服务器配置hexo开启https（ssl证书）</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Dabing-He @ Dabing</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    <br>
+    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022080326号-1</a>
+  </div>
+
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'hexo/ssl/',
+    favicon: {
+      show: "（●´3｀●）来了就太棒了！",
+      hide: "(´Д｀)不要走嘛~~"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -4,17 +4,27 @@
     <title> • Posts by &#34;redis&#34; tag</title>
     <link href="https://blog.dabing.cool" />
     <updated>2022-08-20T02:10:10.000Z</updated>
+    <category term="算法" />
+    <category term="成功日记" />
+    <category term="打卡" />
+    <category term="脱发" />
+    <category term="补牙" />
+    <category term="Hexo" />
+    <category term="Valine-Admin" />
+    <category term="ssl" />
+    <category term="https" />
+    <category term="git" />
+    <category term="RabbitMQ" />
     <category term="Redis" />
     <category term="Jedis" />
     <category term="JVM" />
-    <category term="Hexo" />
     <category term="Java新特性" />
     <category term="微服务" />
     <category term="SpringCloud" />
     <entry>
-        <id>https://blog.dabing.cool/cache/redis%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A0%A1%E9%AA%8C/</id>
+        <id>https://blog.dabing.cool/javamore/cache/redis%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A0%A1%E9%AA%8C/</id>
         <title>Redis实现手机验证码校验</title>
-        <link rel="alternate" href="https://blog.dabing.cool/cache/redis%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A0%A1%E9%AA%8C/"/>
+        <link rel="alternate" href="https://blog.dabing.cool/javamore/cache/redis%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E6%A0%A1%E9%AA%8C/"/>
         <content type="html">&lt;h2 id=&#34;目标-完成一个手机验证码功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目标-完成一个手机验证码功能&#34;&gt;#&lt;/a&gt; 目标 - 完成一个手机验证码功能&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;要求：&lt;/strong&gt;&lt;br&gt;
 1、输入手机号，点击发送后随机生成 6 位数字码，2 分钟有效&lt;br&gt;
@@ -37,9 +47,9 @@
         <updated>2022-08-20T02:10:10.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.dabing.cool/cache/%E4%BD%BF%E7%94%A8Jedis%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Redis/</id>
+        <id>https://blog.dabing.cool/javamore/cache/%E4%BD%BF%E7%94%A8Jedis%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Redis/</id>
         <title>用Jedis连接Redis</title>
-        <link rel="alternate" href="https://blog.dabing.cool/cache/%E4%BD%BF%E7%94%A8Jedis%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Redis/"/>
+        <link rel="alternate" href="https://blog.dabing.cool/javamore/cache/%E4%BD%BF%E7%94%A8Jedis%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8Redis/"/>
         <content type="html">&lt;p&gt;🚨🚨先说明，做下面操作，如果是服务器的话，修改端口 6379 为公开、不设置 redis 密码这些操作都是很危险的！！！一定要设置密码，可以改端口号，只要不是 6379 都行，然后也不要公开，就设置自己本机的 ip 即可，我下面没有做更改。&lt;/p&gt;
 &lt;p&gt;血的教训，我就被攻击了，可参考：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NpbmRlcmVsbGFfX18vYXJ0aWNsZS9kZXRhaWxzLzgwMzkxNTYz&#34;&gt; 挖矿？入侵？木马？都是 redis 没设密码搞的鬼&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-jedis所需要的jar包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-jedis所需要的jar包&#34;&gt;#&lt;/a&gt; 1 - Jedis 所需要的 jar 包&lt;/h2&gt;
@@ -77,9 +87,9 @@
         <updated>2022-08-20T02:10:10.000Z</updated>
     </entry>
     <entry>
-        <id>https://blog.dabing.cool/cache/Redis/</id>
+        <id>https://blog.dabing.cool/javamore/cache/Redis/</id>
         <title>Redis</title>
-        <link rel="alternate" href="https://blog.dabing.cool/cache/Redis/"/>
+        <link rel="alternate" href="https://blog.dabing.cool/javamore/cache/Redis/"/>
         <content type="html">&lt;p&gt;官网链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5yZWRpcy5pbw==&#34;&gt;http://www.redis.io&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;视频：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVJ2NDExNzdBZj9zcG1faWRfZnJvbT0zMzMuOTk5LjAuMCZhbXA7dmRfc291cmNlPTEzOWU4MTY4ZDFhZWJiYTg3NGI4MDQ4OTEwMDY2ZDMx&#34;&gt;Redis 6 尚硅谷&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;一-nosql数据库简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-nosql数据库简介&#34;&gt;#&lt;/a&gt; 一、NoSQL 数据库简介&lt;/h1&gt;

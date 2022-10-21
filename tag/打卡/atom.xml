@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.dabing.cool</id>
+    <title> • Posts by &#34;打卡&#34; tag</title>
+    <link href="https://blog.dabing.cool" />
+    <updated>2022-09-02T16:00:00.000Z</updated>
+    <category term="算法" />
+    <category term="成功日记" />
+    <category term="打卡" />
+    <category term="脱发" />
+    <category term="补牙" />
+    <category term="Hexo" />
+    <category term="Valine-Admin" />
+    <category term="ssl" />
+    <category term="https" />
+    <category term="git" />
+    <category term="RabbitMQ" />
+    <category term="Redis" />
+    <category term="Jedis" />
+    <category term="JVM" />
+    <category term="Java新特性" />
+    <category term="微服务" />
+    <category term="SpringCloud" />
+    <entry>
+        <id>https://blog.dabing.cool/diary/%E6%89%93%E5%8D%A1%E6%97%A5%E8%AE%B0/</id>
+        <title>打卡日记</title>
+        <link rel="alternate" href="https://blog.dabing.cool/diary/%E6%89%93%E5%8D%A1%E6%97%A5%E8%AE%B0/"/>
+        <content type="html">&lt;p&gt;因为摆烂好久了，天天不学习，试试在这打卡能不能让自己好好学习，这个打卡日记不会一直在的，但是至少明年的时候还在，应该到明年我就把这个打卡下了哈哈哈哈，因为我要是把这个博客放简历里的话我是不想让公司的人看到我的打卡日记的。&lt;/p&gt;
+&lt;p&gt;以前也是有好好打卡的，试过很多地方，不过都是在校时候的事情了。试过在本子上，我小本本都写好几本了，写的贼详细，几乎每天都写对于以前的我还是蛮有效果的。&lt;/p&gt;
+&lt;p&gt;一些好习惯啊不能丢的呀，例如：记账、睡前看书、不带手机上床、看电影、番茄学习法（休息时间可以上个厕所啊，看十几分钟其他书啊，或者搞卫生走走啊都行）。。。。&lt;/p&gt;
+&lt;h1 id=&#34;一-2022年10月&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-2022年10月&#34;&gt;#&lt;/a&gt; 一、2022 年 10 月&lt;/h1&gt;
+&lt;h3 id=&#34;1-2022-10-19-周三&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-2022-10-19-周三&#34;&gt;#&lt;/a&gt; 1 . 2022-10-19  周三   🌤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;s&gt;🌸算法新手班 - 第三课（练习）&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;🌸SpringCloud 笔记整理&lt;/s&gt; (1/4)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-2022-10-20-周四&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-2022-10-20-周四&#34;&gt;#&lt;/a&gt; 2 . 2022-10-20  周四  🌤&lt;/h3&gt;
+&lt;p&gt;今日计划🌸：(完成划线)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;s&gt;🗒SpringCloud 笔记整理&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;📒记账&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;工作：健康度监控 - 实时停机及时率（整理文档 + 部分代码）&lt;/s&gt;- 部分不具备办公条件&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="打卡" />
+        <updated>2022-09-02T16:00:00.000Z</updated>
+    </entry>
+</feed>

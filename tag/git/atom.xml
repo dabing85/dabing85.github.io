@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.dabing.cool</id>
+    <title> • Posts by &#34;git&#34; tag</title>
+    <link href="https://blog.dabing.cool" />
+    <updated>2022-04-10T02:00:00.000Z</updated>
+    <category term="算法" />
+    <category term="成功日记" />
+    <category term="打卡" />
+    <category term="脱发" />
+    <category term="补牙" />
+    <category term="Hexo" />
+    <category term="Valine-Admin" />
+    <category term="ssl" />
+    <category term="https" />
+    <category term="git" />
+    <category term="RabbitMQ" />
+    <category term="Redis" />
+    <category term="Jedis" />
+    <category term="JVM" />
+    <category term="Java新特性" />
+    <category term="微服务" />
+    <category term="SpringCloud" />
+    <entry>
+        <id>https://blog.dabing.cool/java/git/</id>
+        <title>git</title>
+        <link rel="alternate" href="https://blog.dabing.cool/java/git/"/>
+        <content type="html">&lt;p&gt;🍈作者：王甜甜（dabing）&lt;/p&gt;
+&lt;h1 id=&#34;怎么将本地项目上传到github上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#怎么将本地项目上传到github上&#34;&gt;#&lt;/a&gt; 怎么将本地项目上传到 github 上？&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;一、首先你先有个本地项目&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二、到 GitHub 上注册个账户，下载 git。该做的都做了（不会就百度）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三、设置 ssh 密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1 - 生成 ssh key&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在电脑开始处找到的 git 文件下的 git Bash&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653320827784-ca8321c0-4ad3-4899-b388-5af3845e941b.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;切换到～/.ssh 目录下，查看有没有密钥的文件。就是这几个文件，或者在电脑文件里找也行&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653321716749-a9efeef6-08a1-419c-aca8-1f0455b46021.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653321844403-ea98dbe3-f84d-4706-88cf-e29ab554341f.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果没有就生成密钥，具体命令如下：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/.ssh  &lt;span class=&#34;token comment&#34;&gt;# 切换到～/.ssh 目录下&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~/.ssh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token function&#34;&gt;ls&lt;/span&gt;	 &lt;span class=&#34;token comment&#34;&gt;# 列出该目录的文件，看看有没有 ssh 的 key 文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;known_hosts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~/.ssh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ ssh-keygen &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; rsa &lt;span class=&#34;token parameter variable&#34;&gt;-C&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;2261617090@qq.com&#34;&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;# 如果没有用这个命令生成，下面是打印信息不用管&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Generating public/private rsa key pair.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Enter &lt;span class=&#34;token function&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;which&lt;/span&gt; to save the key &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;/c/Users/22616/.ssh/id_rsa&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;: &lt;span class=&#34;token comment&#34;&gt;#这里让你确认密钥的生成位置，回车即可&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Enter passphrase &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;empty &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; no passphrase&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;: &lt;span class=&#34;token comment&#34;&gt;# 这里让你输入密码，我这里不填密码，不用密码太麻烦，回车即可&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Enter same passphrase again: &lt;span class=&#34;token comment&#34;&gt;# 回车即可&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your identification has been saved &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; /c/Users/22616/.ssh/id_rsa&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Your public key has been saved &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; /c/Users/22616/.ssh/id_rsa.pub&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;The key fingerprint is:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;SHA256:QZhUaReYx2/x1Bu14GwFOB9HaTKlAJ56sLydHJhKqfE &lt;span class=&#34;token number&#34;&gt;2261617090&lt;/span&gt;@qq.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;The key&#39;s randomart image is:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+---&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;RSA &lt;span class=&#34;token number&#34;&gt;3072&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;----+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;     &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;+o*oo.o&lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt;+&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;      o.* &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;o&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;o&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;       o.&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; .oO*.o&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;      o *.  +&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;   &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; o *So &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt;     &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; o      &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;   &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; E &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; +       &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;                 &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;                 &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+----&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;SHA256&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;-----+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/.ssh   &lt;span class=&#34;token comment&#34;&gt;# 再切换过来看看&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;22616&lt;/span&gt;@hexb MINGW64 ~/.ssh&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token function&#34;&gt;ls&lt;/span&gt;	&lt;span class=&#34;token comment&#34;&gt;# 这下有了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;id_rsa  id_rsa.pub  known_hosts  known_hosts.old&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这下已经生成密钥了，在 &lt;code&gt;C:\Users\22616\.ssh&lt;/code&gt;  路径下：打开 &lt;code&gt;id_rsa.pub&lt;/code&gt;  这个是公钥，复制内容。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653354976106-387e0032-f1ab-4083-8256-9cabb1f2f7b9.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2 - 在 github 上设置 ssh key&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322307223-9bdbca7a-6f5d-4f0d-896b-f6da2d35d9bf.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322465457-a5d22820-a5a0-40e6-b18f-a582673b6675.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ok~~&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四、GitHub 上建个仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;new—&amp;gt; 起个名 ----&amp;gt; 创建&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355092749-ffe2be8e-064c-434a-82e5-7689a5cdae69.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;起个名～然后创建就行&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355179304-fa420499-c23f-4175-b9e8-d8783173d0e1.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;五、将本地的项目提交到 GitHub 上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1- 建立 git 仓库，Git Bash 切换到本地项目的根目录下，或者直接到项目目录里，右键 Git Bash 打开&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322685848-52768f7f-44ad-4205-a0f8-c82e7f78043c.png&#34; alt=&#34;img&#34;&gt;&lt;strong&gt; 执行&lt;/strong&gt; &lt;code&gt;git init&lt;/code&gt; &lt;strong&gt; 命令，将这个项目变成 git 可以管理的仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; init&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;2 - 将项目的所有文件添加到仓库，add 不仅可以添加单个文件，也可以跟通配符 ，可以跟目录。一个&lt;/strong&gt; &lt;code&gt;.&lt;/code&gt; &lt;strong&gt; 表示当前目录下的所有文件都 add&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;3 - 将 add 的文件 commit 到本地仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; commit &lt;span class=&#34;token parameter variable&#34;&gt;-m&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;注释信息&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;4 - 关联 GitHub 仓库，把你刚刚创建的 GitHub 上的仓库路径复制一下，使用 ssh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653323144193-1a0ec826-038c-4af1-8aeb-f4aa18d34213.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; remote &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; origin git@github.com:dabing85/OA---SSM.git&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;5 - 在上传代码之前，最好先 pull 一下&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; pull origin master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;strong&gt;6 - 上传代码到 github 远程仓库上&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; push &lt;span class=&#34;token parameter variable&#34;&gt;-u&lt;/span&gt; origin master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;好了，到这就完成了&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355902995-b4ba474e-63cc-42e5-8a98-2cc70e8efd01.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;一个很适合练习git的地方&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一个很适合练习git的地方&#34;&gt;#&lt;/a&gt; 一个很适合练习 git 的地方&lt;/h1&gt;
+&lt;p&gt;网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vc2NoaW5hLmdpdGVlLmlvL2xlYXJuLWdpdC1icmFuY2hpbmcv&#34;&gt;https://oschina.gitee.io/learn-git-branching/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;我是从 gitee 底下点的，找 git 的学习资料也可以在 gitee 底下找。&lt;/p&gt;
+&lt;p&gt;记一下我做了啥题，做着做着就忘了～～～（分主要、远程两部分）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一、主要题&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git commit&lt;/code&gt;   提交代码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch newBranch&lt;/code&gt;   创建一个名为 newBranch 的新分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout newBranch&lt;/code&gt;  切换到 newBranch 分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge newBranch&lt;/code&gt;   将 newBranch 的代码合并到当前分支&lt;/li&gt;
+&lt;li&gt;举个例子：将 &lt;code&gt;newBranch&lt;/code&gt;  新写的代码提交，然后将它跟主分支 &lt;code&gt;master&lt;/code&gt;  合并&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; checkout newBranch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; commit&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; checkout master&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; commit&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; merge newBranch&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git rebase master&lt;/code&gt;  也是合并分支，但是这个合并分支可以看到提交的记录&lt;/li&gt;
+&lt;li&gt;相对引用 &lt;code&gt;^&lt;/code&gt;  可以找到它的父节点，即上次提交的记录。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如切换到 bugFix 分支的父节点：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653367143898-9ff5e0db-ddd5-42d3-ae36-56d972a6f5ad.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; checkout bugFix^&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol&gt;
+&lt;li&gt;相对引用 2 &lt;code&gt;~&lt;/code&gt;  也是用来移动的，让 head 指向它的父节点。因为 &lt;code&gt;^&lt;/code&gt;  是一次只往回移动一步， &lt;code&gt;~&lt;/code&gt; + &lt;code&gt;数字&lt;/code&gt; 可以移动多步，使用命令 &lt;code&gt;git checkout head~4&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;head 本来是指向 c4 节点的，往以前提交的记录移动 4 个位置，到 c0&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653367488026-5a693369-0ab2-4fc1-bc8e-e4b05e186c89.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 &lt;code&gt;~&lt;/code&gt;  配合 &lt;code&gt;-f&lt;/code&gt;  可以强制修改分支的位置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如 &lt;code&gt;git branch -f master head~3&lt;/code&gt;  这个命令的意思是将 master 分支的指向强制移动到 head 节点的第 3 级父级节点处。&lt;/p&gt;
+&lt;p&gt;原本 master 分支是跟 bugFix 分支一样指向 c4 的，执行命令后，将 master 分支强制移动到了 c1 的提交记录位置去了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653368510537-fcd56a3a-8c96-4fa5-87be-08c128d913db.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;二、远程题（实线是本地仓库，虚线是远程仓库）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt;   -  在本地创建一个远程仓库的拷贝（比如从 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dpdGh1Yi5jb20=&#34;&gt;github.com&lt;/span&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt; - 这是远程分支的命令规则，即远程仓库名 / 分支名，   如一般会取名为： &lt;code&gt;origin/master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git fetch&lt;/code&gt; - 从远程获取数据，并且本地的远程分支也会更新到最新的位置。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653626701083-63d353e0-2ff0-4d8f-b96f-f1dc838c85b4.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;git fetch 完成了两件事：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从远程仓库下载本地&lt;/li&gt;
+&lt;li&gt;更新远程分支（o/master）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;git fetch&lt;/code&gt;  通常通过互联网（使用  &lt;code&gt;http:// &lt;/code&gt; 或  &lt;code&gt;git:// &lt;/code&gt; 协议) 与远程仓库通信&lt;/p&gt;
+&lt;p&gt;注意 git fetch 只是把远程仓库的数据 &lt;code&gt;下载&lt;/code&gt; 下来而已，并没有更新本地仓库的内容&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt; - 相当于 git fetch 和 git merge  o/master 两步操作，即先抓取更新，再合并到本地分支。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push&lt;/code&gt; - 正好跟 pull 是相反的，将你的变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录。一旦 git push 成功，你的小伙伴就能在远程仓库下载你的分享成果了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果你的 git push 没有带任何参数，那么它会是上传到你配置里默认的仓库里去，在 push.default 中有配置。但是我在我的项目里咋没找到这个配置&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于有偏差的提交历史，咋办？就是在你 push 之前，你的同事已经在远程仓库上有提交了，如果他修改的 api 你使用到了，那就会发生冲突，你直接 push 是会失败的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这时，你需要先把远程仓库的数据更新到本地，再把你的本地提交 push 到远程仓库，你的修改就是基于新的远程分支的。具体操作：先 git pull ；再 git push&lt;/p&gt;
+&lt;p&gt;也可以用 rebase 的方式合并，即先 git pull --rebase；再 git push&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653629059279-6dce82f7-1d33-4951-ae5d-219db6132668.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;待做题 。。。。。。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;在idea中使用git&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在idea中使用git&#34;&gt;#&lt;/a&gt; 在 idea 中使用 git？&lt;/h1&gt;
+&lt;h2 id=&#34;1-将你的项目初始化成一个git项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-将你的项目初始化成一个git项目&#34;&gt;#&lt;/a&gt; 1 - 将你的项目初始化成一个 git 项目：&lt;/h2&gt;
+&lt;p&gt;配置 Git  : VCS----&amp;gt;Enable Version ----&amp;gt; 选择 Git&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653663946711-f1ed609e-920a-42ad-acf1-b0a9bf76e857.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664001651-e0c039b8-bed1-41e4-9a00-2a2dffcf0060.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664096827-8c7f9bdf-1eee-496c-8280-b2849bf9e770.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;看控制台的命令， &lt;code&gt;git init&lt;/code&gt; , 这个操作会在本地创建一个本地仓库。&lt;/p&gt;
+&lt;h2 id=&#34;2-文件颜色说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-文件颜色说明&#34;&gt;#&lt;/a&gt; 2- 文件颜色说明：&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664194120-0b8015de-feaa-406c-a09e-91e81c0cf95c.png&#34; alt=&#34;img&#34;&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653666563905-5cbad4f7-b538-4a20-9483-eee8c85b5a8b.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;红色&lt;/code&gt; 证明这个文件只是在&lt;strong&gt;工作区&lt;/strong&gt;，git 是不管理红色文件的， &lt;code&gt;add&lt;/code&gt;  之后变成 &lt;code&gt;绿色&lt;/code&gt; 表示添加到了&lt;strong&gt;暂存区&lt;/strong&gt;，再 &lt;code&gt;commit&lt;/code&gt;  之后会变成普通的 &lt;code&gt;黑色&lt;/code&gt; 保存到&lt;strong&gt;本地仓库&lt;/strong&gt;，再 &lt;code&gt;push&lt;/code&gt;  之后，会把本地仓库的文件上传到&lt;strong&gt;远程仓库&lt;/strong&gt;并合并。而当你对文件进行过修改后，文件颜色会变成 &lt;code&gt;蓝色&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664544471-10cdb690-687f-46f8-898f-f33d7fea64c8.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Workspace：工作区 (当前用户操作修改的区域)&lt;/li&gt;
+&lt;li&gt;Index / Stage：暂存区 (add 后的区域)&lt;/li&gt;
+&lt;li&gt;Repository：仓库区或本地仓库 (commit 后的区域)&lt;/li&gt;
+&lt;li&gt;Remote：远程仓库 (push 后的区域)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;写多了，回来～～～&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665079816-05a82e00-9349-46a0-ae6d-cc42c7e5de92.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665404091-711c9498-e9f2-465d-9a29-36ec10b4892f.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以再这看看人家 git 命令怎么用的&lt;/p&gt;
+&lt;h2 id=&#34;3-将文件commit-提交到本地仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-将文件commit-提交到本地仓库&#34;&gt;#&lt;/a&gt; 3 - 将文件 commit 提交到本地仓库:&lt;/h2&gt;
+&lt;p&gt;sorry，我这里图标错啦，✔那个是 commit，↗是 push&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665755831-df58f364-de57-4ab2-a222-0de9f68760c9.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-将本地仓库的文件-push-上传到远程分支上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-将本地仓库的文件-push-上传到远程分支上&#34;&gt;#&lt;/a&gt; 4 - 将本地仓库的文件 push 上传到远程分支上&lt;/h2&gt;
+&lt;p&gt;要上传到远程上，你首先得先关联你的远程 git。比如 gitee。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在远程仓库上创建一个新项目&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将本地项目关联到远程仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我在 gitee 上创建，先设置 ssh 公钥，上次已经说过怎么生产公钥，怎么设置了&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.1 设置 ssh 公钥&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653667689764-a3570d4f-4ef2-4a30-8a10-a14dd2bd8840.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.2 创建仓库，并复制仓库 ssh 地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653668188943-de8e5820-74da-4d83-91d8-9b0009ac7812.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.3 在 idea 上执行下列命令，gitee 上也有教的&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; remote &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; origin git@gitee.com:hedabing/wiki.git  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# origin 是远程仓库的名字，这样就不用每次都写很长的地址&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; push &lt;span class=&#34;token parameter variable&#34;&gt;-u&lt;/span&gt; origin &lt;span class=&#34;token string&#34;&gt;&#34;master&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653669018375-61cb5792-27fe-483d-9484-ce03c2e2f254.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;就 OK 了。&lt;/p&gt;
+&lt;p&gt;下次再有新代码，就一样，用 idea 自带的图标，✔commit，↗push 即可。&lt;/p&gt;
+&lt;h2 id=&#34;4-分支说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-分支说明&#34;&gt;#&lt;/a&gt; 4 - 分支说明&lt;/h2&gt;
+&lt;p&gt;另外，一般工作中不会直接把你写的代码合并到 master 远程主分支上的，&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653787669095-ec8ec08f-06e5-46ef-bbfa-4ccd847c2711.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;右下角这个树杈，就是指明了你 push 之后会把你的代码上传合并到哪个分支去，也就是 Local Branch 本地分支：hub/master 这里 hub 是远程仓库名字，master 是远程仓库的远程分支。&lt;/p&gt;
+&lt;p&gt;在工作中呢，需要创建属于你自己的分支，你再本地环境下写好代码之后，push 到你自己的分支下。最后要做合并到 master 主分支下的请求才可以.&lt;/p&gt;
+&lt;p&gt;例如下面是我的分支，我再这上面上传代码，并不会把代码直接上传到 master 主分支上。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn.nlark.com/yuque/0/2022/png/27101822/1653788262004-8506ecdd-4db4-48ed-884c-fb52e026d2e0.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="git" />
+        <updated>2022-04-10T02:00:00.000Z</updated>
+    </entry>
+</feed>

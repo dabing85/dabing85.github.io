@@ -1,0 +1,666 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="https://blog.dabing.cool/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="https://blog.dabing.cool/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="https://blog.dabing.cool/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="git" />
+
+
+<link rel="canonical" href="https://blog.dabing.cool/java/git/">
+
+
+
+  <title>
+git - Java |
+Dabing =  = 不在能知，乃在能行</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">git
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-04-10 10:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-10T10:00:00+08:00">2022-04-10</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Dabing</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/java/" itemprop="item" rel="index" title="分类于 Java"><span itemprop="name">Java</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://blog.dabing.cool/java/git/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Dabing-He">
+    <meta itemprop="description" content="不在能知，乃在能行, 欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>🍈作者：王甜甜（dabing）</p>
+<h1 id="怎么将本地项目上传到github上"><a class="markdownIt-Anchor" href="#怎么将本地项目上传到github上">#</a> 怎么将本地项目上传到 github 上？</h1>
+<p><strong>一、首先你先有个本地项目</strong></p>
+<p><strong>二、到 GitHub 上注册个账户，下载 git。该做的都做了（不会就百度）</strong></p>
+<p><strong>三、设置 ssh 密钥</strong></p>
+<p><strong>1 - 生成 ssh key</strong></p>
+<p>在电脑开始处找到的 git 文件下的 git Bash</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653320827784-ca8321c0-4ad3-4899-b388-5af3845e941b.png" alt="img"></p>
+<p>切换到～/.ssh 目录下，查看有没有密钥的文件。就是这几个文件，或者在电脑文件里找也行</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653321716749-a9efeef6-08a1-419c-aca8-1f0455b46021.png" alt="img"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653321844403-ea98dbe3-f84d-4706-88cf-e29ab554341f.png" alt="img"></p>
+<p>如果没有就生成密钥，具体命令如下：</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~</pre></td></tr><tr><td data-num="2"></td><td><pre>$ <span class="token builtin class-name">cd</span> ~/.ssh  <span class="token comment"># 切换到～/.ssh 目录下</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~/.ssh</pre></td></tr><tr><td data-num="5"></td><td><pre>$ <span class="token function">ls</span>	 <span class="token comment"># 列出该目录的文件，看看有没有 ssh 的 key 文件</span></pre></td></tr><tr><td data-num="6"></td><td><pre>known_hosts</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~/.ssh</pre></td></tr><tr><td data-num="9"></td><td><pre>$ <span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~</pre></td></tr><tr><td data-num="12"></td><td><pre>$ ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"2261617090@qq.com"</span>   <span class="token comment"># 如果没有用这个命令生成，下面是打印信息不用管</span></pre></td></tr><tr><td data-num="13"></td><td><pre>Generating public/private rsa key pair.</pre></td></tr><tr><td data-num="14"></td><td><pre>Enter <span class="token function">file</span> <span class="token keyword">in</span> <span class="token function">which</span> to save the key <span class="token punctuation">(</span>/c/Users/22616/.ssh/id_rsa<span class="token punctuation">)</span>: <span class="token comment">#这里让你确认密钥的生成位置，回车即可</span></pre></td></tr><tr><td data-num="15"></td><td><pre>Enter passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> no passphrase<span class="token punctuation">)</span>: <span class="token comment"># 这里让你输入密码，我这里不填密码，不用密码太麻烦，回车即可</span></pre></td></tr><tr><td data-num="16"></td><td><pre>Enter same passphrase again: <span class="token comment"># 回车即可</span></pre></td></tr><tr><td data-num="17"></td><td><pre>Your identification has been saved <span class="token keyword">in</span> /c/Users/22616/.ssh/id_rsa</pre></td></tr><tr><td data-num="18"></td><td><pre>Your public key has been saved <span class="token keyword">in</span> /c/Users/22616/.ssh/id_rsa.pub</pre></td></tr><tr><td data-num="19"></td><td><pre>The key fingerprint is:</pre></td></tr><tr><td data-num="20"></td><td><pre>SHA256:QZhUaReYx2/x1Bu14GwFOB9HaTKlAJ56sLydHJhKqfE <span class="token number">2261617090</span>@qq.com</pre></td></tr><tr><td data-num="21"></td><td><pre>The key's randomart image is:</pre></td></tr><tr><td data-num="22"></td><td><pre>+---<span class="token punctuation">[</span>RSA <span class="token number">3072</span><span class="token punctuation">]</span>----+</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token operator">|</span>     <span class="token punctuation">..</span>+o*oo.o<span class="token operator">+=</span>+<span class="token operator">|</span></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token operator">|</span>      o.* <span class="token operator">=</span>o<span class="token operator">=</span><span class="token operator">+=</span><span class="token operator">=</span>o<span class="token operator">|</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token operator">|</span>       o.<span class="token operator">=</span> .oO*.o<span class="token operator">|</span></pre></td></tr><tr><td data-num="26"></td><td><pre><span class="token operator">|</span>      o *.  +<span class="token punctuation">..</span>. <span class="token operator">|</span></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token operator">|</span>   <span class="token builtin class-name">.</span> o *So <span class="token builtin class-name">.</span>     <span class="token operator">|</span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token operator">|</span>    <span class="token operator">=</span> <span class="token builtin class-name">.</span> <span class="token operator">=</span> o      <span class="token operator">|</span></pre></td></tr><tr><td data-num="29"></td><td><pre><span class="token operator">|</span>   <span class="token builtin class-name">.</span> E <span class="token builtin class-name">.</span> +       <span class="token operator">|</span></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token operator">|</span>                 <span class="token operator">|</span></pre></td></tr><tr><td data-num="31"></td><td><pre><span class="token operator">|</span>                 <span class="token operator">|</span></pre></td></tr><tr><td data-num="32"></td><td><pre>+----<span class="token punctuation">[</span>SHA256<span class="token punctuation">]</span>-----+</pre></td></tr><tr><td data-num="33"></td><td><pre></pre></td></tr><tr><td data-num="34"></td><td><pre></pre></td></tr><tr><td data-num="35"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~</pre></td></tr><tr><td data-num="36"></td><td><pre>$ <span class="token builtin class-name">cd</span> ~/.ssh   <span class="token comment"># 再切换过来看看</span></pre></td></tr><tr><td data-num="37"></td><td><pre></pre></td></tr><tr><td data-num="38"></td><td><pre><span class="token number">22616</span>@hexb MINGW64 ~/.ssh</pre></td></tr><tr><td data-num="39"></td><td><pre>$ <span class="token function">ls</span>	<span class="token comment"># 这下有了</span></pre></td></tr><tr><td data-num="40"></td><td><pre>id_rsa  id_rsa.pub  known_hosts  known_hosts.old</pre></td></tr></table></figure><p>这下已经生成密钥了，在 <code>C:\Users\22616\.ssh</code>  路径下：打开 <code>id_rsa.pub</code>  这个是公钥，复制内容。</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653354976106-387e0032-f1ab-4083-8256-9cabb1f2f7b9.png" alt="img"></p>
+<p><strong>2 - 在 github 上设置 ssh key</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322307223-9bdbca7a-6f5d-4f0d-896b-f6da2d35d9bf.png" alt="img"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322465457-a5d22820-a5a0-40e6-b18f-a582673b6675.png" alt="img"></p>
+<p>ok~~</p>
+<p><strong>四、GitHub 上建个仓库</strong></p>
+<p>new—&gt; 起个名 ----&gt; 创建</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355092749-ffe2be8e-064c-434a-82e5-7689a5cdae69.png" alt="img"></p>
+<p>起个名～然后创建就行</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355179304-fa420499-c23f-4175-b9e8-d8783173d0e1.png" alt="img"></p>
+<p><strong>五、将本地的项目提交到 GitHub 上</strong></p>
+<p><strong>1- 建立 git 仓库，Git Bash 切换到本地项目的根目录下，或者直接到项目目录里，右键 Git Bash 打开</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653322685848-52768f7f-44ad-4205-a0f8-c82e7f78043c.png" alt="img"><strong> 执行</strong> <code>git init</code> <strong> 命令，将这个项目变成 git 可以管理的仓库</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> init</pre></td></tr></table></figure><p><strong>2 - 将项目的所有文件添加到仓库，add 不仅可以添加单个文件，也可以跟通配符 ，可以跟目录。一个</strong> <code>.</code> <strong> 表示当前目录下的所有文件都 add</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span></pre></td></tr></table></figure><p><strong>3 - 将 add 的文件 commit 到本地仓库</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"注释信息"</span></pre></td></tr></table></figure><p><strong>4 - 关联 GitHub 仓库，把你刚刚创建的 GitHub 上的仓库路径复制一下，使用 ssh</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653323144193-1a0ec826-038c-4af1-8aeb-f4aa18d34213.png" alt="img"></p>
+<p>执行命令：</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:dabing85/OA---SSM.git</pre></td></tr></table></figure><p><strong>5 - 在上传代码之前，最好先 pull 一下</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> pull origin master</pre></td></tr></table></figure><p><strong>6 - 上传代码到 github 远程仓库上</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master</pre></td></tr></table></figure><p>好了，到这就完成了</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653355902995-b4ba474e-63cc-42e5-8a98-2cc70e8efd01.png" alt="img"></p>
+<h1 id="一个很适合练习git的地方"><a class="markdownIt-Anchor" href="#一个很适合练习git的地方">#</a> 一个很适合练习 git 的地方</h1>
+<p>网址：<span class="exturl" data-url="aHR0cHM6Ly9vc2NoaW5hLmdpdGVlLmlvL2xlYXJuLWdpdC1icmFuY2hpbmcv">https://oschina.gitee.io/learn-git-branching/</span></p>
+<p>我是从 gitee 底下点的，找 git 的学习资料也可以在 gitee 底下找。</p>
+<p>记一下我做了啥题，做着做着就忘了～～～（分主要、远程两部分）</p>
+<p><strong>一、主要题</strong></p>
+<ol>
+<li><code>git commit</code>   提交代码</li>
+<li><code>git branch newBranch</code>   创建一个名为 newBranch 的新分支</li>
+<li><code>git checkout newBranch</code>  切换到 newBranch 分支</li>
+<li><code>git merge newBranch</code>   将 newBranch 的代码合并到当前分支</li>
+<li>举个例子：将 <code>newBranch</code>  新写的代码提交，然后将它跟主分支 <code>master</code>  合并</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> checkout newBranch</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">git</span> commit</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">git</span> checkout master</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">git</span> commit</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">git</span> merge newBranch</pre></td></tr></table></figure><ol>
+<li><code>git rebase master</code>  也是合并分支，但是这个合并分支可以看到提交的记录</li>
+<li>相对引用 <code>^</code>  可以找到它的父节点，即上次提交的记录。</li>
+</ol>
+<p>例如切换到 bugFix 分支的父节点：</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653367143898-9ff5e0db-ddd5-42d3-ae36-56d972a6f5ad.png" alt="img"></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> checkout bugFix^</pre></td></tr></table></figure><ol>
+<li>相对引用 2 <code>~</code>  也是用来移动的，让 head 指向它的父节点。因为 <code>^</code>  是一次只往回移动一步， <code>~</code> + <code>数字</code> 可以移动多步，使用命令 <code>git checkout head~4</code></li>
+</ol>
+<p>head 本来是指向 c4 节点的，往以前提交的记录移动 4 个位置，到 c0</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653367488026-5a693369-0ab2-4fc1-bc8e-e4b05e186c89.png" alt="img"></p>
+<ol>
+<li>使用 <code>~</code>  配合 <code>-f</code>  可以强制修改分支的位置</li>
+</ol>
+<p>例如 <code>git branch -f master head~3</code>  这个命令的意思是将 master 分支的指向强制移动到 head 节点的第 3 级父级节点处。</p>
+<p>原本 master 分支是跟 bugFix 分支一样指向 c4 的，执行命令后，将 master 分支强制移动到了 c1 的提交记录位置去了。</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653368510537-fcd56a3a-8c96-4fa5-87be-08c128d913db.png" alt="img"></p>
+<p>二、远程题（实线是本地仓库，虚线是远程仓库）</p>
+<ol>
+<li><code>git clone</code>   -  在本地创建一个远程仓库的拷贝（比如从 <span class="exturl" data-url="aHR0cDovL2dpdGh1Yi5jb20=">github.com</span>）</li>
+<li><code>/</code> - 这是远程分支的命令规则，即远程仓库名 / 分支名，   如一般会取名为： <code>origin/master</code></li>
+<li><code>git fetch</code> - 从远程获取数据，并且本地的远程分支也会更新到最新的位置。</li>
+</ol>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653626701083-63d353e0-2ff0-4d8f-b96f-f1dc838c85b4.png" alt="img"></p>
+<p>git fetch 完成了两件事：</p>
+<ul>
+<li>从远程仓库下载本地</li>
+<li>更新远程分支（o/master）</li>
+</ul>
+<p><code>git fetch</code>  通常通过互联网（使用  <code>http:// </code> 或  <code>git:// </code> 协议) 与远程仓库通信</p>
+<p>注意 git fetch 只是把远程仓库的数据 <code>下载</code> 下来而已，并没有更新本地仓库的内容</p>
+<ol>
+<li><code>git pull</code> - 相当于 git fetch 和 git merge  o/master 两步操作，即先抓取更新，再合并到本地分支。</li>
+<li><code>git push</code> - 正好跟 pull 是相反的，将你的变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录。一旦 git push 成功，你的小伙伴就能在远程仓库下载你的分享成果了。</li>
+</ol>
+<p>如果你的 git push 没有带任何参数，那么它会是上传到你配置里默认的仓库里去，在 push.default 中有配置。但是我在我的项目里咋没找到这个配置</p>
+<ol>
+<li>对于有偏差的提交历史，咋办？就是在你 push 之前，你的同事已经在远程仓库上有提交了，如果他修改的 api 你使用到了，那就会发生冲突，你直接 push 是会失败的。</li>
+</ol>
+<p>这时，你需要先把远程仓库的数据更新到本地，再把你的本地提交 push 到远程仓库，你的修改就是基于新的远程分支的。具体操作：先 git pull ；再 git push</p>
+<p>也可以用 rebase 的方式合并，即先 git pull --rebase；再 git push</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653629059279-6dce82f7-1d33-4951-ae5d-219db6132668.png" alt="img"></p>
+<ol>
+<li>待做题 。。。。。。</li>
+</ol>
+<h1 id="在idea中使用git"><a class="markdownIt-Anchor" href="#在idea中使用git">#</a> 在 idea 中使用 git？</h1>
+<h2 id="1-将你的项目初始化成一个git项目"><a class="markdownIt-Anchor" href="#1-将你的项目初始化成一个git项目">#</a> 1 - 将你的项目初始化成一个 git 项目：</h2>
+<p>配置 Git  : VCS----&gt;Enable Version ----&gt; 选择 Git</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653663946711-f1ed609e-920a-42ad-acf1-b0a9bf76e857.png" alt="img"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664001651-e0c039b8-bed1-41e4-9a00-2a2dffcf0060.png" alt="img"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664096827-8c7f9bdf-1eee-496c-8280-b2849bf9e770.png" alt="img"></p>
+<p>看控制台的命令， <code>git init</code> , 这个操作会在本地创建一个本地仓库。</p>
+<h2 id="2-文件颜色说明"><a class="markdownIt-Anchor" href="#2-文件颜色说明">#</a> 2- 文件颜色说明：</h2>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664194120-0b8015de-feaa-406c-a09e-91e81c0cf95c.png" alt="img"><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653666563905-5cbad4f7-b538-4a20-9483-eee8c85b5a8b.png" alt="img"></p>
+<p><code>红色</code> 证明这个文件只是在<strong>工作区</strong>，git 是不管理红色文件的， <code>add</code>  之后变成 <code>绿色</code> 表示添加到了<strong>暂存区</strong>，再 <code>commit</code>  之后会变成普通的 <code>黑色</code> 保存到<strong>本地仓库</strong>，再 <code>push</code>  之后，会把本地仓库的文件上传到<strong>远程仓库</strong>并合并。而当你对文件进行过修改后，文件颜色会变成 <code>蓝色</code></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653664544471-10cdb690-687f-46f8-898f-f33d7fea64c8.png" alt="img"></p>
+<ul>
+<li>Workspace：工作区 (当前用户操作修改的区域)</li>
+<li>Index / Stage：暂存区 (add 后的区域)</li>
+<li>Repository：仓库区或本地仓库 (commit 后的区域)</li>
+<li>Remote：远程仓库 (push 后的区域)</li>
+</ul>
+<p>写多了，回来～～～</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665079816-05a82e00-9349-46a0-ae6d-cc42c7e5de92.png" alt="img"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665404091-711c9498-e9f2-465d-9a29-36ec10b4892f.png" alt="img"></p>
+<p>可以再这看看人家 git 命令怎么用的</p>
+<h2 id="3-将文件commit-提交到本地仓库"><a class="markdownIt-Anchor" href="#3-将文件commit-提交到本地仓库">#</a> 3 - 将文件 commit 提交到本地仓库:</h2>
+<p>sorry，我这里图标错啦，✔那个是 commit，↗是 push</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653665755831-df58f364-de57-4ab2-a222-0de9f68760c9.png" alt="img"></p>
+<h2 id="4-将本地仓库的文件-push-上传到远程分支上"><a class="markdownIt-Anchor" href="#4-将本地仓库的文件-push-上传到远程分支上">#</a> 4 - 将本地仓库的文件 push 上传到远程分支上</h2>
+<p>要上传到远程上，你首先得先关联你的远程 git。比如 gitee。</p>
+<p><strong>在远程仓库上创建一个新项目</strong></p>
+<p><strong>将本地项目关联到远程仓库</strong></p>
+<p>我在 gitee 上创建，先设置 ssh 公钥，上次已经说过怎么生产公钥，怎么设置了</p>
+<p><strong>4.1 设置 ssh 公钥</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653667689764-a3570d4f-4ef2-4a30-8a10-a14dd2bd8840.png" alt="img"></p>
+<p><strong>4.2 创建仓库，并复制仓库 ssh 地址</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653668188943-de8e5820-74da-4d83-91d8-9b0009ac7812.png" alt="img"></p>
+<p><strong>4.3 在 idea 上执行下列命令，gitee 上也有教的</strong></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> remote <span class="token function">add</span> origin git@gitee.com:hedabing/wiki.git  </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># origin 是远程仓库的名字，这样就不用每次都写很长的地址</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin <span class="token string">"master"</span></pre></td></tr></table></figure><p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653669018375-61cb5792-27fe-483d-9484-ce03c2e2f254.png" alt="img"></p>
+<p>就 OK 了。</p>
+<p>下次再有新代码，就一样，用 idea 自带的图标，✔commit，↗push 即可。</p>
+<h2 id="4-分支说明"><a class="markdownIt-Anchor" href="#4-分支说明">#</a> 4 - 分支说明</h2>
+<p>另外，一般工作中不会直接把你写的代码合并到 master 远程主分支上的，</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653787669095-ec8ec08f-06e5-46ef-bbfa-4ccd847c2711.png" alt="img"></p>
+<p>右下角这个树杈，就是指明了你 push 之后会把你的代码上传合并到哪个分支去，也就是 Local Branch 本地分支：hub/master 这里 hub 是远程仓库名字，master 是远程仓库的远程分支。</p>
+<p>在工作中呢，需要创建属于你自己的分支，你再本地环境下写好代码之后，push 到你自己的分支下。最后要做合并到 master 主分支下的请求才可以.</p>
+<p>例如下面是我的分支，我再这上面上传代码，并不会把代码直接上传到 master 主分支上。</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/27101822/1653788262004-8506ecdd-4db4-48ed-884c-fb52e026d2e0.png" alt="img"></p>
+
+      <div class="tags">
+          <a href="/tags/git/" rel="tag"><i class="ic i-tag"></i> git</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-10-21 14:07:12" itemprop="dateModified" datetime="2022-10-21T14:07:12+08:00">2022-10-21</time>
+  </span>
+  <span id="java/git/" class="item leancloud_visitors" data-flag-title="git" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Dabing-He <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.dabing.cool/java/git/" title="git">https://blog.dabing.cool/java/git/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/java/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxfdlttj20zk0m8npd.jpg" title="Java8新特性">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java8新特性</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/springcloud/springcloud/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwuom7cj20zk0m8dvn.jpg" title="SpringCloud">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 微服务</span>
+  <h3>SpringCloud</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8A"><span class="toc-number">1.</span> <span class="toc-text"> 怎么将本地项目上传到 github 上？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%BE%88%E9%80%82%E5%90%88%E7%BB%83%E4%B9%A0git%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="toc-number">2.</span> <span class="toc-text"> 一个很适合练习 git 的地方</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8idea%E4%B8%AD%E4%BD%BF%E7%94%A8git"><span class="toc-number">3.</span> <span class="toc-text"> 在 idea 中使用 git？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%86%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E6%88%90%E4%B8%80%E4%B8%AAgit%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.1.</span> <span class="toc-text"> 1 - 将你的项目初始化成一个 git 项目：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E4%BB%B6%E9%A2%9C%E8%89%B2%E8%AF%B4%E6%98%8E"><span class="toc-number">3.2.</span> <span class="toc-text"> 2- 文件颜色说明：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B0%86%E6%96%87%E4%BB%B6commit-%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">3.3.</span> <span class="toc-text"> 3 - 将文件 commit 提交到本地仓库:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6-push-%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E4%B8%8A"><span class="toc-number">3.4.</span> <span class="toc-text"> 4 - 将本地仓库的文件 push 上传到远程分支上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%86%E6%94%AF%E8%AF%B4%E6%98%8E"><span class="toc-number">3.5.</span> <span class="toc-text"> 4 - 分支说明</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/java/JVM-%E5%88%9D%E7%BA%A7/" rel="bookmark" title="JVM-初级">JVM-初级</a></li><li class="active"><a href="/java/git/" rel="bookmark" title="git">git</a></li><li><a href="/java/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" rel="bookmark" title="Java8新特性">Java8新特性</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Dabing-He"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Dabing-He</p>
+  <div class="description" itemprop="description">欢迎来到大冰的笔记空间~这里主要会记录编程学习笔记🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">19</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">9</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">17</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RhYmluZzg1" title="https:&#x2F;&#x2F;github.com&#x2F;dabing85"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/java/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/springcloud/springcloud/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 Hexo">Hexo</a>
+</div>
+
+    <span><a href="/hexo/ssl/" title="服务器配置hexo开启https（ssl证书）">服务器配置hexo开启https（ssl证书）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E9%9A%8F%E4%BE%BF%E8%AE%B0/" title="分类于 随便记">随便记</a>
+</div>
+
+    <span><a href="/diary/%E6%88%90%E5%8A%9F%E6%97%A5%E8%AE%B0/" title="成功日记">成功日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E9%9A%8F%E4%BE%BF%E8%AE%B0/" title="分类于 随便记">随便记</a>
+</div>
+
+    <span><a href="/diary/%E8%84%B1%E5%8F%91%E6%97%A5%E8%AE%B0/" title="脱发日记">脱发日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="分类于 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E6%96%B0%E6%89%8B/" title="分类于 算法-新手">算法-新手</a>
+</div>
+
+    <span><a href="/algorithm/%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0/" title="随机函数-新手">随机函数-新手</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/java/JVM-%E5%88%9D%E7%BA%A7/" title="JVM-初级">JVM-初级</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/java/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" title="Java8新特性">Java8新特性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 Hexo">Hexo</a>
+</div>
+
+    <span><a href="/hexo/Valine-Admin/" title="使用Valine-Admin实现评论邮件提醒">使用Valine-Admin实现评论邮件提醒</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/java/git/" title="git">git</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E9%9A%8F%E4%BE%BF%E8%AE%B0/" title="分类于 随便记">随便记</a>
+</div>
+
+    <span><a href="/diary/%E8%A1%A5%E7%89%99%E6%97%A5%E8%AE%B0/" title="补牙日记">补牙日记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="分类于 算法">算法</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95-%E6%96%B0%E6%89%8B/" title="分类于 算法-新手">算法-新手</a>
+</div>
+
+    <span><a href="/algorithm/%E5%89%8D%E7%BC%80%E5%92%8C/" title="前缀和-新手">前缀和-新手</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Dabing-He @ Dabing</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    <br>
+    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2022080326号-1</a>
+  </div>
+
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'java/git/',
+    favicon: {
+      show: "（●´3｀●）来了就太棒了！",
+      hide: "(´Д｀)不要走嘛~~"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

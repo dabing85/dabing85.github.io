@@ -7,10 +7,20 @@
         <language>zh-CN</language>
         <pubDate>Sat, 01 Jan 2022 10:00:00 +0800</pubDate>
         <lastBuildDate>Sat, 01 Jan 2022 10:00:00 +0800</lastBuildDate>
+        <category>算法</category>
+        <category>成功日记</category>
+        <category>打卡</category>
+        <category>脱发</category>
+        <category>补牙</category>
+        <category>Hexo</category>
+        <category>Valine-Admin</category>
+        <category>ssl</category>
+        <category>https</category>
+        <category>git</category>
+        <category>RabbitMQ</category>
         <category>Redis</category>
         <category>Jedis</category>
         <category>JVM</category>
-        <category>Hexo</category>
         <category>Java新特性</category>
         <category>微服务</category>
         <category>SpringCloud</category>
